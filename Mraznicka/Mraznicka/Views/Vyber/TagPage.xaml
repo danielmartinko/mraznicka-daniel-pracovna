@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Mraznicka.ValueConverters"
+			   xmlns:local="clr-namespace:Mraznicka.ViewModels.Vyber"  
+             mc:Ignorable="d"
+             x:Class="Mraznicka.Views.Vyber.TagPage"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate vyberpomocoutagu}">
+    
+    <ContentPage.Resources>
+        <converters:TovarConverter x:Key="tovarConverter" />
+		<converters:DateConverter x:Key="dateConverter" />
+		<converters:TovarToImageConverter x:Key="tovarToImageConverter" />
+		<converters:ExpiraciaConverter x:Key="expiraciaConverter" />
+	</ContentPage.Resources>
+
+    <RelativeLayout>
+		<!--<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<Label Style="{StaticResource Note}" Text="Zoznam miestností s chladničkou, mrazničkou Vám ponúka prehladný zoznam spolu s obsadenostou daného zariadenia. Takto prehladne vidíte kolko miesta máte ešte volného."></Label>
+		</RelativeLayout>-->
+
+		<ScrollView Margin="20,20,20,20" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+			<StackLayout>
+				<Label Style="{DynamicResource Header}" Margin="0,0,0,0">Najdená položka</Label>
+				<!--<StackLayout Orientation="Vertical" Margin="0,0,0,0">
+					<Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+					<Label Text="{Binding Item.Popis}" FontSize="16" TextColor="Black"  />
+				</StackLayout>
+
+				<StackLayout Orientation="Vertical" Margin="0,0,0,0">
+					<Label Text="Kategoria:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.Tovar, Converter={StaticResource tovarConverter}}" FontSize="16" TextColor="Black"  />
+				</StackLayout>
+
+				<StackLayout Orientation="Vertical" Margin="0,0,0,0">
+					<Label Text="Poznamka:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+					<Label Text="{Binding Item.Poznamka}" FontSize="16" TextColor="Black"  />
+				</StackLayout>
+
+				<StackLayout Orientation="Vertical" Margin="0,0,0,0">
+					<Label Text="Expiracia:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+					<Label Text="{Binding Item.Expiracia }" FontSize="16" TextColor="Black"  />
+				</StackLayout>-->
+
+
+				<StackLayout Padding="0,0,0,0"  Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
+
+					<StackLayout Orientation="Vertical" WidthRequest="80">
+						<ImageButton Source="{Binding Item.Tovar, Converter={StaticResource tovarToImageConverter}}"  Margin="0,0,20,0" VerticalOptions="CenterAndExpand"></ImageButton>
+					</StackLayout>
+
+					<StackLayout>
+						<StackLayout.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding ItemTapped}" CommandParameter="{Binding Item}"/>
+
+						</StackLayout.GestureRecognizers>
+						<Label Text="{Binding Item.Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
+						<StackLayout Orientation="Horizontal">
+							<Frame  Style="{DynamicResource FrameOrange}" BackgroundColor="{Binding Item, Converter={StaticResource expiraciaConverter}}" BorderColor="{Binding Item, Converter={StaticResource expiraciaConverter}}">
+								<Label Text="{Binding Item.Expiracia, StringFormat='Expiracia: {0}', Converter={StaticResource dateConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
+							</Frame>
+						</StackLayout>
+						<Label Text="{Binding Item.DatumVytvorenia, StringFormat='Vlozene: {0}',  Converter={StaticResource dateConverter}}" Style="{DynamicResource FrameLabel}" />
+					</StackLayout>
+				</StackLayout>
+
+
+				<!--<StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+					<Label Text="TagID:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+                    <Label Text="{Binding Item.TagID}" FontSize="16" TextColor="Black"  />
+				</StackLayout>-->
+
+
+				<Image  HorizontalOptions="Center" Source="nfc.png" Opacity="0.8" Margin="0,50,0,0" HeightRequest="145" Aspect="AspectFill" ></Image>
+                <Button x:Name="btnSubmit" Text="Výber"  Image="ikona_vybrat50x50.png" ContentLayout="Left,20" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
+                <Label Text="Priložte telefón ku TAG-u" FontSize="22" TextColor="Black"  />
+
+            </StackLayout>
+		</ScrollView>
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+		</RelativeLayout>
+	</RelativeLayout>
+
+</ContentPage>

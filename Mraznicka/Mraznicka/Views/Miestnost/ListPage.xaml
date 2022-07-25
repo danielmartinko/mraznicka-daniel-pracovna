@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mraznicka.Views.Miestnost.ListPage"
+             xmlns:local="clr-namespace:Mraznicka.ViewModels.Miestnost"  
+             xmlns:model="clr-namespace:Mraznicka.Models"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate zoznammiestnosti}">
+
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+	</ContentPage.ToolbarItems>
+
+
+	<RelativeLayout>
+		<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<!--<Image Source="istockphoto1.jpg" Opacity="1" Aspect="AspectFit" VerticalOptions="EndAndExpand"></Image>-->
+			<Label Margin="20" TextColor="#666" WidthRequest="230" LineBreakMode="WordWrap" Text="Databazovo zostava ale skryje sa..Nastavi sa default hodnota na prvu miestnost v DB."></Label>
+		</RelativeLayout>
+		<RefreshView  x:DataType="local:ListViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" BackgroundColor="Transparent">
+			<CollectionView Margin="0,150,0,80" x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
+				<CollectionView.ItemTemplate>
+					<DataTemplate>
+						<StackLayout x:DataType="model:Miestnost" Style="{DynamicResource StackLayoutList}">
+							<Label Text="{Binding Nazov}" Style="{DynamicResource Header}" />
+							<StackLayout Orientation="Horizontal">
+								<Frame Style="{DynamicResource FrameOrange}">
+									<Label Text="Počet položiek: 10"  Style="{DynamicResource FrameLabelWhite}" />
+								</Frame>
+								<Label Text="Najblizšia expirácia: 11.2.2015" Style="{DynamicResource FrameLabel}" />
+							</StackLayout>
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ListViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+							</StackLayout.GestureRecognizers>
+						</StackLayout>
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+			</CollectionView>
+		</RefreshView>
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+		</RelativeLayout>
+	</RelativeLayout>
+
+
+
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mraznicka.Views.Vyber.ExpressPage"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate expresspull}">
+    
+	<RelativeLayout>
+		<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<Label Style="{StaticResource Note}" Text="Zoznam miestností s chladničkou, mrazničkou Vám ponúka prehladný zoznam spolu s obsadenostou daného zariadenia. Takto prehladne vidíte kolko miesta máte ešte volného."></Label>
+		</RelativeLayout>
+
+		<ScrollView Style="{StaticResource MainSroll}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+			<StackLayout>
+				<Label Style="{DynamicResource Header}">Hladaná položka</Label>
+				<StackLayout Orientation="Vertical" Margin="0,0,0,0">
+					<Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+					<Label Text="{Binding Item.Popis}" FontSize="16" TextColor="Black"  />
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+					<Label Text="TagID:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+					<Label Text="{Binding Item.TagID}" FontSize="16" TextColor="Black"  />
+				</StackLayout>
+
+				<Label Style="{DynamicResource Header}" Margin="0,20,0,0">Najdená položka</Label>
+				<StackLayout Orientation="Vertical" Margin="0,0,0,0">
+					<Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+					<Label Text="{Binding TagItem.Popis}" FontSize="16" TextColor="Black"  />
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+					<Label Text="TagID:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
+					<Label Text="{Binding TagItem.TagID}" FontSize="16" TextColor="Black"  />
+				</StackLayout>
+
+
+				<Image  HorizontalOptions="Center" Source="nfc.png" Opacity="0.8" Margin="0,50,0,0" HeightRequest="145" Aspect="AspectFill" ></Image>
+				<Button Image="ikona_vybrat50x50" Text="Vyber" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
+
+			</StackLayout>
+		</ScrollView>
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+		</RelativeLayout>
+	</RelativeLayout>
+
+</ContentPage>

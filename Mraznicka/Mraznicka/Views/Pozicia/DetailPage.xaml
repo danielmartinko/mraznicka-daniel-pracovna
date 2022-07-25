@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mraznicka.Views.Pozicia.DetailPage"
+			 BackgroundColor="#F2F7FA"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate detailpozicie}">
+
+    <RelativeLayout>
+        <!--<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+
+        <RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<Label Style="{StaticResource Note}" Text="{i18n:Translate popispoziciadetail}"></Label>
+        </RelativeLayout>-->
+		<ScrollView Margin="0,0,0,80" Padding="20"  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+            <StackLayout>
+                <StackLayout Orientation="Vertical" Margin="0,20,0,0">
+					<Label Text="{i18n:Translate nazov}" Style="{DynamicResource Header}" />
+					<Entry Text="{Binding Item.Nazov, Mode=TwoWay}" Style="{StaticResource EntryStyle}" Placeholder="{i18n:Translate zadajtepoziciu}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <RelativeLayout  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-110}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Button Text="{i18n:Translate ulozit}" Image="ikona_ano_ulozit50x50.png" ContentLayout="Left,20" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Margin="0"></Button>
+                    <Button Text="{i18n:Translate zmazat}" Image="ikona_nie_zmazat50x50.png" ContentLayout="Left,20" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" Margin="0"></Button>
+                </StackLayout>
+                <Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFit" ></Image>
+            </StackLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ContentPage>

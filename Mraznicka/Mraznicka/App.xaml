@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Mraznicka.Helpers"
+             xmlns:cp="clr-namespace:Mraznicka/Controls"
+             x:Class="Mraznicka.App">
+	<!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+	<Application.Resources>
+		<ResourceDictionary>
+			<Color x:Key="Primary">#03749c</Color>
+			<Color x:Key="Secondary">#f97304</Color>
+
+            <!--<Font x:Key="FirstSize">30</Font>
+            <Font x:Key="SecondSize">18</Font>-->
+            <x:Double x:Key="FirstSize">30</x:Double>
+            <x:Double x:Key="SecondSize">18</x:Double>
+
+            <Style TargetType="Button">
+				<Setter Property="Margin" Value="40,0,40,40"></Setter>
+				<Setter Property="TextColor" Value="White"></Setter>
+				<Setter Property="CornerRadius" Value="40"></Setter>
+				<Setter Property="VisualStateManager.VisualStateGroups">
+					<VisualStateGroupList>
+						<VisualStateGroup x:Name="CommonStates">
+							<VisualState x:Name="Normal">
+								<VisualState.Setters>
+									<Setter Property="BackgroundColor" Value="{StaticResource Secondary}" />
+								</VisualState.Setters>
+							</VisualState>
+							<VisualState x:Name="Disabled">
+								<VisualState.Setters>
+									<Setter Property="BackgroundColor" Value="#332196F3" />
+								</VisualState.Setters>
+							</VisualState>
+						</VisualStateGroup>
+					</VisualStateGroupList>
+				</Setter>
+			</Style>
+
+			<Style  TargetType="Label" x:Key="Header">
+				<Setter Property="TextColor" Value="{StaticResource Primary}"></Setter>
+                <Setter Property="FontSize" Value="Large"></Setter>
+				<Setter Property="FontAttributes" Value="Bold"></Setter>
+				<Setter Property="LineBreakMode" Value="NoWrap"></Setter>
+			</Style>
+
+			<Style  TargetType="ScrollView" x:Key="MainSroll">
+				<Setter Property="Margin" Value="0,150,0,50"></Setter>
+				<Setter Property="Padding" Value="20"></Setter>
+			</Style>
+			
+			<Style  TargetType="StackLayout" x:Key="MainStack">
+				
+				<Setter Property="Background" Value="red"></Setter>
+				<Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
+				<Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+				<Setter Property="RelativeLayout.WidthConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"></Setter>
+				<Setter Property="RelativeLayout.HeightConstraint" Value="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1}"></Setter>
+			</Style>
+
+
+			<Style  TargetType="Label" x:Key="Note">
+				<Setter Property="Margin" Value="20"></Setter>
+				<Setter Property="TextColor" Value="#666"></Setter>
+				<Setter Property="FontSize" Value="Small"></Setter>
+				<Setter Property="LineBreakMode" Value="WordWrap"></Setter>
+				<Setter Property="WidthRequest" Value="200"></Setter>
+			</Style>
+
+			<Style TargetType="Label" x:Key="LabelFirst">
+				<Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontSize" Value="{StaticResource SecondSize}"></Setter>
+			</Style>
+
+			<Style TargetType="Label" x:Key="LabelSecond">
+				<Setter Property="TextColor" Value="LightGray"></Setter>
+                <Setter Property="FontSize" Value="{StaticResource SecondSize}"></Setter>
+			</Style>
+
+			<Style x:Key="EntryStyle" TargetType="Entry">
+				<Setter Property="FontSize" Value="Medium"></Setter>
+				<Setter Property="TextColor" Value="Black"></Setter>
+				<Setter Property="PlaceholderColor" Value="#c6c6c6"></Setter>
+			</Style>
+
+			<Style x:Key="PickerStyle" TargetType="Picker">
+				<Setter Property="FontSize" Value="14"></Setter>
+				<Setter Property="TextColor" Value="Black"></Setter>
+			</Style>
+
+
+			<Style TargetType="StackLayout" x:Key="StackLayoutList">
+				<Setter Property="Padding" Value="20,10,0,0"></Setter>
+				<Setter Property="Margin" Value="0,25,0,0"></Setter>
+			</Style>
+
+			<Style TargetType="Frame" x:Key="FrameOrange">
+				<Setter Property="CornerRadius" Value="10"></Setter>
+				<Setter Property="OutlineColor" Value="{StaticResource Secondary}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource Secondary}"></Setter>
+				<Setter Property="Padding" Value="10,2,10,2"></Setter>
+			</Style>
+
+			<Style TargetType="Frame" x:Key="FrameBlue">
+				<Setter Property="CornerRadius" Value="10"></Setter>
+				<Setter Property="OutlineColor" Value="{StaticResource Primary}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource Primary}"></Setter>
+				<Setter Property="Padding" Value="10,2,10,2"></Setter>
+			</Style>
+
+			<Style TargetType="Label" x:Key="KeyLabel">
+				<Setter Property="LineBreakMode" Value="NoWrap"></Setter>
+				<Setter Property="TextColor" Value="Black"></Setter>
+				<Setter Property="FontSize" Value="16"></Setter>
+				<Setter Property="FontAttributes" Value="Bold"></Setter>
+				<Setter Property="Margin" Value="0,10,0,0"></Setter>
+			</Style>
+
+			<Style TargetType="Label" x:Key="ValueLabel" BasedOn="{StaticResource KeyLabel}">
+				<Setter Property="FontAttributes" Value="None"></Setter>
+			</Style>
+
+
+			<Style TargetType="Entry" x:Key="ValueEntry">
+				<Setter Property="TextColor" Value="Black"></Setter>
+				<Setter Property="FontSize" Value="16"></Setter>
+				<Setter Property="PlaceholderColor" Value="#c6c6c6"></Setter>
+			</Style>
+
+
+			<Style TargetType="Picker" x:Key="ValuePicker">
+				<Setter Property="TextColor" Value="Black"></Setter>
+				<Setter Property="FontSize" Value="16"></Setter>
+			</Style>
+
+
+			<Style TargetType="Label" x:Key="FrameLabel">
+				<Setter Property="LineBreakMode" Value="NoWrap"></Setter>
+				<Setter Property="TextColor" Value="LightGray"></Setter>
+                <Setter Property="FontSize" Value="Small"></Setter>
+			</Style>
+
+			<Style TargetType="Label" x:Key="FrameLabelWhite" BasedOn="{StaticResource FrameLabel}">
+				<Setter Property="TextColor" Value="White"></Setter>
+			</Style>
+
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>

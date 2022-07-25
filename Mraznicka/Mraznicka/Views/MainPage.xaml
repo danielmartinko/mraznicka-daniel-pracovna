@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="clr-namespace:Mraznicka"
+             mc:Ignorable="d"
+             x:Class="Mraznicka.Views.MainPage"
+             BackgroundColor="#F2F7FA"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate uvodnastranka}">
+
+    <RelativeLayout Margin="0" Padding="0">
+        <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<Label Style="{StaticResource Note}" Text="Táto aplikácia Vám umožní kontrolovať čo, kde a ako dlho máte uložené v mrazničke."></Label>
+		</RelativeLayout>
+
+		<ScrollView Style="{StaticResource MainSroll}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+			<StackLayout>
+				<StackLayout>
+                    <Button Text="{i18n:Translate vlozenie}" Image="ikona_vlozit50x50.png" ContentLayout="Left,20" Margin="0" Command="{Binding PushCommand}"/>
+                    <Button Text="{i18n:Translate vyber_main}" Image="ikona_vybrat50x50.png" ContentLayout="Left,20" Margin="0" Command="{Binding PullCommand}"/>
+                    <Button Text="{i18n:Translate prehlad_main}" Image="ikona_prehlad50x50.png" ContentLayout="Left,20" Margin="0" Command="{Binding PreviewCommand}"/>
+				</StackLayout>
+				<StackLayout IsVisible="{Binding HasLicense}">
+					<StackLayout Margin="0,20,0,0">
+						<Label Text="{i18n:Translate licencnecislo}" Style="{DynamicResource KeyLabel}" />
+						<Entry Text="{Binding LicKey, Mode=TwoWay}" Keyboard="Numeric" Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtelicencnecislo}" />
+					</StackLayout>
+                    <StackLayout>
+                        <Button Text="{i18n:Translate ulozit}" Image="ikona_ano_ulozit50x50.png" ContentLayout="Left,20" Margin="0" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    </StackLayout>
+                </StackLayout>
+			</StackLayout>
+		</ScrollView>
+
+        <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+				<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+				<Label Text="{i18n:Translate verzia}" HorizontalTextAlignment="Center" FontSize="10" Margin="0,-15,0,0" TextColor="Black"></Label>
+
+		</RelativeLayout>
+	</RelativeLayout>
+
+
+</ContentPage>

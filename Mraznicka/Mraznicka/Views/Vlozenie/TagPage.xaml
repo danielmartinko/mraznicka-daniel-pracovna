@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mraznicka.Views.Vlozenie.TagPage"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate vlozeniepomocoutagu}">
+    
+	<RelativeLayout>
+		<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<Label Style="{StaticResource Note}" Text="{i18n:Translate popisvlozenietag}"></Label>
+		</RelativeLayout>
+
+		<ScrollView Style="{StaticResource MainSroll}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+			<StackLayout>
+
+
+				<StackLayout>
+					<Label Text="{i18n:Translate popis}" Style="{DynamicResource KeyLabel}" />
+					<Entry Text="{Binding Item.Popis, Mode=TwoWay}" Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtepopis}" />
+				</StackLayout>
+				<StackLayout>
+					<Label Text="{i18n:Translate expiracia}"  Style="{DynamicResource KeyLabel}" />
+					<DatePicker Date="{Binding Item.Expiracia, Mode=TwoWay}" FontSize="Large" TextColor="Black" />
+				</StackLayout>
+
+				<StackLayout>
+					<Label Text="{i18n:Translate hmotnost}"  Style="{DynamicResource KeyLabel}" />
+					<Entry Text="{Binding Item.Hmotnost, Mode=TwoWay}"  Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtehmotnost}" Keyboard="Numeric" />
+				</StackLayout>
+
+				<StackLayout>
+					<Label Text="{i18n:Translate poznamka}"  Style="{DynamicResource KeyLabel}" />
+					<Entry Text="{Binding Item.Poznamka, Mode=TwoWay}"  Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtepoznamku}"  />
+				</StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+                    <Button x:Name="btnSubmit" Text="{i18n:Translate zapisnatag}" Command="{Binding SaveCommand}" BackgroundColor="{Binding ButtonBackgroundColor}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="{i18n:Translate zrusit}" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+
+
+                <!--<Image  HorizontalOptions="Center" Source="nfc.png" Opacity="0.8" Margin="0,0,0,20" HeightRequest="145" Aspect="AspectFill" ></Image>-->
+
+
+				<!--<StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+				<Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+				<Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+			</StackLayout>-->
+
+
+				<!--<StackLayout Orientation="Horizontal">
+					<Label Margin="0,6,0,0" Padding="12,6"  BackgroundColor="Blue"  HorizontalOptions="CenterAndExpand" IsVisible="{Binding DeviceIsListening}"  Text="Listening for NFC Tag..."  TextColor="White" />
+					<Label Margin="0,6,0,0"  Padding="12,6" BackgroundColor="Red"  HorizontalOptions="CenterAndExpand"  IsVisible="{Binding NfcIsDisabled}" Text="NFC IS DISABLED" TextColor="White" />
+				</StackLayout>-->
+
+
+				<!--ScrollView>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label FontSize="Large"
+                   HorizontalOptions="CenterAndExpand"
+                   Text="Plugin NFC Sample" />
+
+                    <Button Clicked="Button_Clicked_StartListening"
+                    IsEnabled="{Binding NfcIsEnabled}"
+                    Text="Read Tag" />
+
+                    <Button Clicked="Button_Clicked_StopListening"
+                    IsEnabled="{Binding NfcIsEnabled}"
+                    Text="Stop Listener" />
+
+                    <Frame BorderColor="Gray" HasShadow="False">
+                        <StackLayout>
+
+                            <StackLayout Padding="0"
+                                 HorizontalOptions="CenterAndExpand"
+                                 Orientation="Horizontal"
+                                 Spacing="0">
+
+                                <CheckBox x:Name="ChkReadOnly"
+                                  IsChecked="False"
+                                  IsEnabled="{Binding NfcIsEnabled}"
+                                  VerticalOptions="Center"
+                                  Color="Red" />
+
+                                <Label FontAttributes="Bold"
+                               Text="Make Tag Read-Only"
+                               TextColor="Red"
+                               VerticalOptions="Center" />
+                            </StackLayout>
+
+                            <Button Clicked="Button_Clicked_StartWriting"
+                            IsEnabled="{Binding NfcIsEnabled}"
+                            Text="Write Tag (Text)" />
+
+                            <Button Clicked="Button_Clicked_StartWriting_Uri"
+                            IsEnabled="{Binding NfcIsEnabled}"
+                            Text="Write Tag (Uri)" />
+
+                            <Button Clicked="Button_Clicked_StartWriting_Custom"
+                            IsEnabled="{Binding NfcIsEnabled}"
+                            Text="Write Tag (Custom)" />
+
+                        </StackLayout>
+                    </Frame>
+
+                    <Button Clicked="Button_Clicked_FormatTag"
+                    IsEnabled="{Binding NfcIsEnabled}"
+                    Text="Clear Tag" />
+
+                    <Label Margin="0,6,0,0"
+                   Padding="12,6"
+                   BackgroundColor="Blue"
+                   HorizontalOptions="CenterAndExpand"
+                   IsVisible="{Binding DeviceIsListening}"
+                   Text="Listening for NFC Tag..."
+                   TextColor="White" />
+
+                    <Label Margin="0,6,0,0"
+                   Padding="12,6"
+                   BackgroundColor="Red"
+                   HorizontalOptions="CenterAndExpand"
+                   IsVisible="{Binding NfcIsDisabled}"
+                   Text="NFC IS DISABLED"
+                   TextColor="White" />
+
+                </StackLayout>
+            </ScrollView-->
+
+
+			</StackLayout>
+		</ScrollView>
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+		</RelativeLayout>
+	</RelativeLayout>
+
+
+
+</ContentPage>

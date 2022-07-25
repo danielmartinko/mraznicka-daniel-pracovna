@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mraznicka.Views.Polozka.ListPage"
+             xmlns:local="clr-namespace:Mraznicka.ViewModels.Polozka"  
+             xmlns:model="clr-namespace:Mraznicka.Models" 
+			  xmlns:converters="clr-namespace:Mraznicka.ValueConverters"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate zoznampoloziek}">
+
+	<ContentPage.Resources>
+		<converters:ZariadenieConverter x:Key="zariadenieConverter" />
+		<converters:MiestnostConverter x:Key="miestnostConverter" />
+		<converters:PoziciaConverter x:Key="poziciaConverter" />
+		<converters:TovarConverter x:Key="tovarConverter" />
+
+	</ContentPage.Resources>
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+	</ContentPage.ToolbarItems>
+
+	<RelativeLayout>
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<Image Source="istockphoto1.jpg" Opacity="0.3" Aspect="Fill"></Image>
+			<Label Margin="20"  TextColor="#666" LineBreakMode="WordWrap" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"></Label>
+		</RelativeLayout>
+		<RefreshView  x:DataType="local:ListViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+			<CollectionView Margin="0,150,0,80" BackgroundColor="White" x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
+				<CollectionView.ItemTemplate>
+					<DataTemplate>
+						<StackLayout x:DataType="model:Polozka" Style="{DynamicResource StackLayoutList}">
+							<Label Text="{Binding Tovar}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
+							<StackLayout Orientation="Horizontal">
+								<Frame Style="{DynamicResource FrameOrange}">
+									<Label Text="{Binding Miestnost}" Style="{DynamicResource FrameLabelWhite}" />
+								</Frame>
+								<Frame Style="{DynamicResource FrameBlue}">
+									<Label Text="{Binding Tovar, Converter={StaticResource tovarConverter}}" Style="{DynamicResource FrameLabelWhite}" />
+								</Frame>
+								<Label Text="{Binding Pozicia}" Style="{DynamicResource FrameLabel}" />
+							</StackLayout>
+							<Label Text="{Binding TagID}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ListViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+							</StackLayout.GestureRecognizers>
+						</StackLayout>
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+			</CollectionView>
+		</RefreshView>
+
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+		</RelativeLayout>
+	</RelativeLayout>
+</ContentPage>

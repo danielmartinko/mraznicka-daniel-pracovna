@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Mraznicka/Mraznicka.Android/bin/Debug
+/Mraznicka/Mraznicka/bin/Debug/netstandard2.0
+/Mraznicka/Mraznicka/obj
+/Mraznicka/Mraznicka.Android/obj
+/Mraznicka/Mraznicka.iOS/obj
+*.user
+/.vs
+/Mraznicka/Mraznicka.Android/bin/Release
+/Mraznicka/Mraznicka.iOS/bin/iPhoneSimulator/Release

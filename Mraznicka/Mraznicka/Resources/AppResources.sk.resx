@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ano" xml:space="preserve">
+    <value>ano</value>
+  </data>
+  <data name="datumvytvorenia" xml:space="preserve">
+    <value>datumvytvorenia</value>
+  </data>
+  <data name="detailmiestnosti" xml:space="preserve">
+    <value>Detailny popis miestnosti</value>
+  </data>
+  <data name="detailpolozky" xml:space="preserve">
+    <value>Detailný popis položky</value>
+  </data>
+  <data name="detailpozicie" xml:space="preserve">
+    <value>Detailný popis pozície</value>
+  </data>
+  <data name="detailtovaru" xml:space="preserve">
+    <value>Detailný popis tovaru</value>
+  </data>
+  <data name="ean" xml:space="preserve">
+    <value>EAN</value>
+  </data>
+  <data name="eansanepouziva" xml:space="preserve">
+    <value>ean sa nepouziva</value>
+  </data>
+  <data name="emptytag" xml:space="preserve">
+    <value>Prázdny TAG</value>
+  </data>
+  <data name="expiracia" xml:space="preserve">
+    <value>Expirácia</value>
+  </data>
+  <data name="expiraciadni" xml:space="preserve">
+    <value>expiracia (dni )</value>
+  </data>
+  <data name="formatingtagoperationsucceessful" xml:space="preserve">
+    <value>Formátovanie prebehlo správne</value>
+  </data>
+  <data name="hmotnost" xml:space="preserve">
+    <value>Hmotnosť (g)</value>
+  </data>
+  <data name="kategoria" xml:space="preserve">
+    <value>Kategória</value>
+  </data>
+  <data name="manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="manualnyvyber" xml:space="preserve">
+    <value>Manuálny výber</value>
+  </data>
+  <data name="nazov" xml:space="preserve">
+    <value>Názov</value>
+  </data>
+  <data name="nfcisdissabled" xml:space="preserve">
+    <value>NFC nie je povolené</value>
+  </data>
+  <data name="nfcisnotavailable" xml:space="preserve">
+    <value>NFC nie je prístupné</value>
+  </data>
+  <data name="notagfound" xml:space="preserve">
+    <value>TAG sa nenašiel</value>
+  </data>
+  <data name="novamiestnost" xml:space="preserve">
+    <value>Nová miestnosť</value>
+  </data>
+  <data name="novapolozka" xml:space="preserve">
+    <value>Nová položka</value>
+  </data>
+  <data name="novapozicia" xml:space="preserve">
+    <value>Nová pozícia</value>
+  </data>
+  <data name="novytovar" xml:space="preserve">
+    <value>Nový tovar</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>ok</value>
+  </data>
+  <data name="oznam" xml:space="preserve">
+    <value>oznam</value>
+  </data>
+  <data name="popispoziciadetail" xml:space="preserve">
+    <value>Zobrazenie pozície detailne</value>
+  </data>
+  <data name="popispozicialist" xml:space="preserve">
+    <value>Zobrazenie popisu pozícií</value>
+  </data>
+  <data name="popispoziciavytvorenie" xml:space="preserve">
+    <value>Vytvorenie pozície</value>
+  </data>
+  <data name="popistovardetail" xml:space="preserve">
+    <value>Zobrazenie tovaru detailne</value>
+  </data>
+  <data name="popistovarvytvorenie" xml:space="preserve">
+    <value>Vytvorenie tovaru</value>
+  </data>
+  <data name="popistovarzoznam" xml:space="preserve">
+    <value>Zobrazenie zoznamu tovarov</value>
+  </data>
+  <data name="popisvyber" xml:space="preserve">
+    <value>Popis výberu</value>
+  </data>
+  <data name="popiszariadeniedetail" xml:space="preserve">
+    <value>Zobrazenie zoznamu zariadení detailne</value>
+  </data>
+  <data name="popiszariadenievytvorenie" xml:space="preserve">
+    <value>Vytvorenie zoznamu zariadení</value>
+  </data>
+  <data name="popiszariadeniezoznam" xml:space="preserve">
+    <value>Popis zariadení zoznam</value>
+  </data>
+  <data name="poslednepouzite" xml:space="preserve">
+    <value>Posledne použité</value>
+  </data>
+  <data name="poznamka" xml:space="preserve">
+    <value>Poznámka</value>
+  </data>
+  <data name="prehlad" xml:space="preserve">
+    <value>Prehľad</value>
+  </data>
+  <data name="recordcantbenull" xml:space="preserve">
+    <value>Záznam nemôže byť prázdny</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="suflik" xml:space="preserve">
+    <value>Pozícia</value>
+  </data>
+  <data name="tag" xml:space="preserve">
+    <value>TAG</value>
+  </data>
+  <data name="tagid" xml:space="preserve">
+    <value>Identifikačné číslo TAG</value>
+  </data>
+  <data name="taginfo" xml:space="preserve">
+    <value>Informácia o TAG</value>
+  </data>
+  <data name="tagsanepouziva" xml:space="preserve">
+    <value>tag sa nepouziva</value>
+  </data>
+  <data name="ulozit" xml:space="preserve">
+    <value>Uložiť</value>
+  </data>
+  <data name="unsupportedtag" xml:space="preserve">
+    <value>Nepodporovaný TAG</value>
+  </data>
+  <data name="userhascancelnfcsession" xml:space="preserve">
+    <value />
+  </data>
+  <data name="uvodnastranka" xml:space="preserve">
+    <value>Úvodná stránka</value>
+  </data>
+  <data name="vlozeniemanualne" xml:space="preserve">
+    <value>Manuálne vloženie</value>
+  </data>
+  <data name="vlozeniepomocouean" xml:space="preserve">
+    <value>Vloženie pomocou použitia EAN</value>
+  </data>
+  <data name="vlozeniepomocoutagu" xml:space="preserve">
+    <value>Vloženie pomocou použitia TAG</value>
+  </data>
+  <data name="vyber" xml:space="preserve">
+    <value>Výber</value>
+  </data>
+  <data name="vyberpomocouean" xml:space="preserve">
+    <value>Výber pomocou použitia EAN</value>
+  </data>
+  <data name="vyberpomocoutagu" xml:space="preserve">
+    <value>Výber pomocou použitia TAG</value>
+  </data>
+  <data name="writingtagisnotsupportedonthisdevice" xml:space="preserve">
+    <value>Zápis do TAG je nepodporovaný</value>
+  </data>
+  <data name="writingtagoperationsuccessful" xml:space="preserve">
+    <value>Zápis do TAG prebehol úspešne</value>
+  </data>
+  <data name="zadajteexpiraciu" xml:space="preserve">
+    <value>Zadajte dátum expirácie</value>
+  </data>
+  <data name="zadajtehmotnost" xml:space="preserve">
+    <value>Zadajte hmotnosť (g)</value>
+  </data>
+  <data name="zadajtenazov" xml:space="preserve">
+    <value>Zadajte názov</value>
+  </data>
+  <data name="zariadenie" xml:space="preserve">
+    <value>Zariadenie</value>
+  </data>
+  <data name="zmazat" xml:space="preserve">
+    <value>Zmazať</value>
+  </data>
+  <data name="zoznammiestnosti" xml:space="preserve">
+    <value>Zoznam miestností</value>
+  </data>
+  <data name="zoznampoloziek" xml:space="preserve">
+    <value>Zoznam položiek</value>
+  </data>
+  <data name="zoznampozicii" xml:space="preserve">
+    <value>Zoznam pozícií</value>
+  </data>
+  <data name="zrusit" xml:space="preserve">
+    <value>Zrušiť</value>
+  </data>
+</root>

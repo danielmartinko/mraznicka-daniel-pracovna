@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             mc:Ignorable="d"
+             x:Class="Mraznicka.Views.Vlozenie.AllInOnePageEan"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="Vloženie pomocou EAN">
+
+	<RelativeLayout>
+		<ScrollView Margin="20,0,20,130" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+			<StackLayout>
+				<StackLayout Margin="20,20,20,0" IsVisible="{Binding InsertByEan, Mode=TwoWay}">
+					<zxing:ZXingScannerView  IsScanning="true" HeightRequest="200"  IsAnalyzing="True" ScanResultCommand="{Binding ScanResultCommand}" />
+					<Label Text="{Binding Item.TagID, StringFormat='ID/EAN: {0}'}" TextColor="Gray"  />
+                    <Label Text="Priložte telefón ku EAN-u" FontSize="22" TextColor="Black"  />
+                </StackLayout>
+                <!--<Button Text="{i18n:Translate ulozit}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>-->
+
+            </StackLayout>
+		</ScrollView>
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<StackLayout>
+				<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFit" ></Image>
+			</StackLayout>
+		</RelativeLayout>
+	</RelativeLayout>
+</ContentPage>

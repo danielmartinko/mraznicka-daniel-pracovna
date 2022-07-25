@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mraznicka.Views.Vlozenie.ManualPage"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate vlozeniemanualne}">
+    
+	<RelativeLayout>
+		<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+			<Label Style="{StaticResource Note}" Text="{i18n:Translate popisvlozeniemanual}"></Label>
+		</RelativeLayout>
+
+		<ScrollView Style="{StaticResource MainSroll}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+			<StackLayout>
+				<StackLayout Margin="0,20,0,0">
+					<Label Text="{i18n:Translate popis}" Style="{DynamicResource KeyLabel}" />
+					<Entry Text="{Binding Item.Popis, Mode=TwoWay}" Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtepopis}" />
+				</StackLayout>
+				<StackLayout>
+					<Label Text="{i18n:Translate expiracia}"  Style="{DynamicResource KeyLabel}" />
+                    <DatePicker Date="{Binding Item.Expiracia, Mode=TwoWay}" FontSize="Large" TextColor="Black" />
+				</StackLayout>
+
+				<StackLayout>
+					<Label Text="{i18n:Translate hmotnost}"  Style="{DynamicResource KeyLabel}" />
+					<Entry Text="{Binding Item.Hmotnost, Mode=TwoWay}"  Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtehmotnost}" Keyboard="Numeric" />
+				</StackLayout>
+
+				<StackLayout>
+					<Label Text="{i18n:Translate poznamka}"  Style="{DynamicResource KeyLabel}" />
+					<Entry Text="{Binding Item.Poznamka, Mode=TwoWay}"  Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtepoznamku}"  />
+				</StackLayout>
+				<StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+					<Button Text="{i18n:Translate ulozit}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+					<Button Text="{i18n:Translate zrusit}" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+		</RelativeLayout>
+	</RelativeLayout>
+</ContentPage>

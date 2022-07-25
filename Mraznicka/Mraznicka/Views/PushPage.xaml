@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mraznicka.Views.PushPage"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate vlozenie}">
+
+	<RelativeLayout>
+		<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
+
+		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+            <Label Margin="20" TextColor="#666" WidthRequest="230" LineBreakMode="WordWrap" Text="{i18n:Translate popisvlozenie}"></Label>
+		</RelativeLayout>
+
+
+		<ScrollView Style="{StaticResource MainSroll}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+			<StackLayout>
+				<StackLayout>
+                    <Button VerticalOptions="Center" Text="{i18n:Translate tag}" Command="{Binding TagCommand}" Margin="0" />
+                    <Button VerticalOptions="Center" Text="{i18n:Translate ean}" Command="{Binding EanCommand}" Margin="0" />
+                    <Button VerticalOptions="Center" Text="{i18n:Translate manual}" Command="{Binding ManualCommand}" Margin="0" />
+				</StackLayout>
+
+                <Label Style="{DynamicResource Header}" Margin="0,50,0,0" Text="{i18n:Translate poslednepouzite}" ></Label>
+
+				<StackLayout>
+                    <Label Text="{i18n:Translate zariadenie}"  Style="{DynamicResource KeyLabel}" />
+                    <Picker x:Name="pckZariadenie" Title="{i18n:Translate zariadenie}" Style="{StaticResource ValuePicker}" ItemsSource="{Binding Zariadenia}" ItemDisplayBinding="{Binding Nazov}" SelectedItem="{Binding SelectedData.Zariadenie}" TextColor="Black"></Picker>
+				</StackLayout>
+				<StackLayout>
+                    <Label Text="{i18n:Translate pozicia}"  Style="{DynamicResource KeyLabel}" />
+                    <Picker x:Name="pckPozicia" Title="{i18n:Translate suflik}" Style="{StaticResource ValuePicker}" ItemsSource="{Binding Pozicie}" ItemDisplayBinding="{Binding Nazov}" SelectedItem="{Binding SelectedData.Pozicia}" TextColor="Black"></Picker>
+				</StackLayout>
+				<StackLayout>
+                    <Label Text="{i18n:Translate kategoria}" Style="{DynamicResource KeyLabel}" />
+                    <Picker x:Name="pckTovar" Title="{i18n:Translate tovar}" Style="{StaticResource ValuePicker}" ItemsSource="{Binding Tovary}" ItemDisplayBinding="{Binding Nazov}" SelectedItem="{Binding SelectedData.Tovar}" TextColor="Black"></Picker>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+		</RelativeLayout>
+	</RelativeLayout>
+
+
+</ContentPage>

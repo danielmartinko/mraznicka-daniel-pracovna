@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mraznicka.Views.Polozka.CreatePage"
+             Shell.PresentationMode="ModalAnimated"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate novapolozka}">
+
+    <RelativeLayout>
+        <StackLayout Margin="0,150,0,80" Padding="20" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Entry Text="{Binding Item.Nazov, Mode=TwoWay}" Style="{StaticResource EntryStyle}" Placeholder="{i18n:Translate zadajtenazov}" />
+        </StackLayout>
+        <RelativeLayout  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-110}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Button Text="{i18n:Translate ulozit}" Image="ikona_ano_ulozit50x50.png" ContentLayout="Left,20" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Margin="0"></Button>
+                </StackLayout>
+                <Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFit" ></Image>
+            </StackLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ContentPage>
