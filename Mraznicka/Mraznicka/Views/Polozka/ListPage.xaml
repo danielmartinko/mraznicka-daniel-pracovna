@@ -21,12 +21,12 @@
 	</ContentPage.ToolbarItems>
 
 	<RelativeLayout>
-		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+		<!--<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
 			<Image Source="istockphoto1.jpg" Opacity="0.3" Aspect="Fill"></Image>
 			<Label Margin="20"  TextColor="#666" LineBreakMode="WordWrap" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"></Label>
-		</RelativeLayout>
+		</RelativeLayout>-->
 		<RefreshView  x:DataType="local:ListViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-			<CollectionView Margin="0,150,0,80" BackgroundColor="White" x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
+			<CollectionView Margin="0,0,0,80" BackgroundColor="White" x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
 				<CollectionView.ItemTemplate>
 					<DataTemplate>
 						<StackLayout x:DataType="model:Polozka" Style="{DynamicResource StackLayoutList}">

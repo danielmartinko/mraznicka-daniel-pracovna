@@ -25,7 +25,7 @@
 
         <ScrollView Margin="20" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
             <StackLayout>
-                <Label Style="{DynamicResource Header}">Hľadaná položka</Label>
+                <Label Style="{DynamicResource Header}" Text="{i18n:Translate hladanapolozka}"></Label>
 				<StackLayout Padding="0,0,0,0"  Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
 
 					<StackLayout Orientation="Vertical" WidthRequest="80">
@@ -47,7 +47,7 @@
 					</StackLayout>
 				</StackLayout>
 
-                <Label x:Name="Najdena" Text="Nájdená položka"  Style="{DynamicResource Header}" Margin="0,20,0,0" TextColor="Black"/>
+                <Label x:Name="Najdena" Text="{i18n:Translate najdenapolozka}"  Style="{DynamicResource Header}" Margin="0,20,0,0" TextColor="Black"/>
                 <!--<StackLayout Orientation="Vertical" Margin="0,0,0,0">
                         <Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
                         <Label x:Name="TagPopis" Text="{Binding TagItem.Popis}" FontSize="25" TextColor="Black"  />
@@ -80,7 +80,7 @@
 				</StackLayout>
 
 
-				<Button x:Name="btnSubmit" Text="Výber" Image="ikona_vybrat50x50" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
+                <Button x:Name="btnSubmit" Text="{i18n:Translate vyber}" Image="ikona_vybrat50x50" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
                 <Image  HorizontalOptions="Center" Source="nfc.png" Opacity="0.8" Margin="0,50,0,0" HeightRequest="145" Aspect="AspectFill" ></Image>
 
             </StackLayout>

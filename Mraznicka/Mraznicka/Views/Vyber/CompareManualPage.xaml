@@ -53,7 +53,7 @@
 				<!--<Label Text="{Binding Item.DatumVytvorenia, StringFormat='Datum vytvorenia: {0}', Converter={StaticResource dateConverter}}" TextColor="Black" />-->
 
                 <StackLayout  Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button Text="Výber" Image="ikona_vybrat50x50" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="{i18n:Translate vyber}" Image="ikona_vybrat50x50" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
                     <!--<Button Text="{i18n:Translate zmazat}" Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand"></Button>-->
                 </StackLayout>
 

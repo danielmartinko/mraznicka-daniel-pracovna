@@ -36,10 +36,10 @@
                 <StackLayout>
                 <zxing:ZXingScannerView  x:Name="_scanView" OnScanResult="Handle_OnScanResult" IsScanning="true" HeightRequest="100"  />
                 <Label Text="{Binding Item.TagID, StringFormat='EAN: {0}'}" TextColor="Tomato"  />
-                <Label Text="Priložte telefón ku EAN-u" FontSize="22" TextColor="Black"  />
+                <Label Text="{i18n:Translate priloztetelefonkeanu}" FontSize="22" TextColor="Black"  />
 
                 <StackLayout>
-                    <Label Style="{DynamicResource Header}">Hladaná položka</Label>
+                    <Label Style="{DynamicResource Header}" Text="{i18n:Translate hladanapolozka}"></Label>
                     <!--<StackLayout Orientation="Vertical" Margin="0,0,0,0">
                         <Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
                         <Label Text="{Binding Item.Popis}" FontSize="16" TextColor="Black"  />
@@ -71,7 +71,7 @@
 						</StackLayout>
 					</StackLayout>
 
-					<Label Style="{DynamicResource Header}" Margin="0,20,0,0">Najdená položka</Label>
+                    <Label Style="{DynamicResource Header}" Margin="0,20,0,0" Text="{i18n:Translate najdenapolozka}"></Label>
                     <!--<StackLayout Orientation="Vertical" Margin="0,0,0,0">
                         <Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
                         <Label x:Name="TagPopis" Text="{Binding TagItem.Popis}" FontSize="25" TextColor="Black"  />
@@ -103,7 +103,7 @@
 						</StackLayout>
 					</StackLayout>
 
-					<Button x:Name="btnSubmit" Text="Výber" Image="ikona_vybrat50x50" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
+                    <Button x:Name="btnSubmit" Text="{i18n:Translate vyber}" Image="ikona_vybrat50x50" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
 
                 </StackLayout>
 

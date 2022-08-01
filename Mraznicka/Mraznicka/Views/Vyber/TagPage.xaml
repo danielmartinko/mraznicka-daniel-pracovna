@@ -26,7 +26,7 @@
 
 		<ScrollView Margin="20,20,20,20" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
 			<StackLayout>
-				<Label Style="{DynamicResource Header}" Margin="0,0,0,0">Najdená položka</Label>
+                <Label Style="{DynamicResource Header}" Margin="0,0,0,0" Text="{i18n:Translate najdenapolozka}"></Label>
 				<!--<StackLayout Orientation="Vertical" Margin="0,0,0,0">
 					<Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
 					<Label Text="{Binding Item.Popis}" FontSize="16" TextColor="Black"  />
@@ -77,8 +77,8 @@
 
 
 				<Image  HorizontalOptions="Center" Source="nfc.png" Opacity="0.8" Margin="0,50,0,0" HeightRequest="145" Aspect="AspectFill" ></Image>
-                <Button x:Name="btnSubmit" Text="Výber"  Image="ikona_vybrat50x50.png" ContentLayout="Left,20" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
-                <Label Text="Priložte telefón ku TAG-u" FontSize="22" TextColor="Black"  />
+                <Button x:Name="btnSubmit" Text="{i18n:Translate vyber}"  Image="ikona_vybrat50x50.png" ContentLayout="Left,20" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
+                <Label Text="{i18n:Translate priloztetelefonktagu}" FontSize="22" TextColor="Black"  />
 
             </StackLayout>
 		</ScrollView>

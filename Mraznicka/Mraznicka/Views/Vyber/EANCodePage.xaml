@@ -33,7 +33,7 @@
 			<StackLayout>
 				<zxing:ZXingScannerView  x:Name="_scanView" OnScanResult="Handle_OnScanResult" IsScanning="true" HeightRequest="130"  />
 				<Label Text="{Binding Item.TagID, StringFormat='EAN: {0}'}" TextColor="LightGray"  />
-                <Label Text="Priložte telefón ku EAN-u" FontSize="22" TextColor="Black"  />
+                <Label Text="{i18n:Translate priloztetelefonkeanu}" FontSize="22" TextColor="Black"  />
 
                 <CollectionView Margin="-20,0,0,0" BackgroundColor="White" x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
 					<CollectionView.ItemTemplate>

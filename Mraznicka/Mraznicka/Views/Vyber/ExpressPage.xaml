@@ -17,7 +17,7 @@
 
 		<ScrollView Style="{StaticResource MainSroll}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
 			<StackLayout>
-				<Label Style="{DynamicResource Header}">Hladaná položka</Label>
+                <Label Style="{DynamicResource Header}" Text="{i18n:Translate hladanapolozka}"></Label>
 				<StackLayout Orientation="Vertical" Margin="0,0,0,0">
 					<Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
 					<Label Text="{Binding Item.Popis}" FontSize="16" TextColor="Black"  />
@@ -28,7 +28,7 @@
 					<Label Text="{Binding Item.TagID}" FontSize="16" TextColor="Black"  />
 				</StackLayout>
 
-				<Label Style="{DynamicResource Header}" Margin="0,20,0,0">Najdená položka</Label>
+                <Label Style="{DynamicResource Header}" Margin="0,20,0,0" Text="{i18n:Translate najdenapolozka}"></Label>
 				<StackLayout Orientation="Vertical" Margin="0,0,0,0">
 					<Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
 					<Label Text="{Binding TagItem.Popis}" FontSize="16" TextColor="Black"  />
@@ -41,7 +41,7 @@
 
 
 				<Image  HorizontalOptions="Center" Source="nfc.png" Opacity="0.8" Margin="0,50,0,0" HeightRequest="145" Aspect="AspectFill" ></Image>
-				<Button Image="ikona_vybrat50x50" Text="Vyber" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
+                <Button Image="ikona_vybrat50x50" Text="{i18n:Translate vyber}" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
 
 			</StackLayout>
 		</ScrollView>
