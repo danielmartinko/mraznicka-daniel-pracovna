@@ -9,12 +9,20 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using Mraznicka.Models;
 using Plugin.SimpleAudioPlayer;
+using Plugin.Toast;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace Mraznicka.ViewModels.Vyber
 {
+
 	//[QueryProperty(nameof(ItemId), nameof(ItemId))]
 	public class TagPageViewModel : BaseViewModel
 	{
+		private Label hmotnost;
+		private Label hmotnost_g;
+		private Label vlozene;
+		private Label najdena_polozka;
+
 		public Command<Models.Polozka> ItemTapped { get; }
 		public IDataStore<Models.Polozka> DataStore => DependencyService.Get<IDataStore<Models.Polozka>>();
 
@@ -77,20 +85,28 @@ namespace Mraznicka.ViewModels.Vyber
 			contentPage = page;
 			VyberCommand = new Command(OnVyber, ValidateVyber);
 			ItemTapped = new Command<Models.Polozka>(OnItemSelected);
+			hmotnost = contentPage.FindByName<Label>("hmotnost");
+			hmotnost_g = contentPage.FindByName<Label>("hmotnost_g");
+			vlozene = contentPage.FindByName<Label>("vlozene");
+			najdena_polozka = contentPage.FindByName<Label>("najdena_polozka");
+			vlozene.IsVisible = false;
+			hmotnost.IsVisible = false;
+			hmotnost_g.IsVisible = false;
+			najdena_polozka.IsVisible = false;
 
 			if (CrossNFC.IsSupported)
 			{
 				if (!CrossNFC.Current.IsAvailable)
 				{
 					//await ShowAlert(Mraznicka.Resources.AppResources.nfcisnotavailable);
-					contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisnotavailable, "Zrusit");
+					contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisnotavailable, Mraznicka.Resources.AppResources.zrusit);
 				}
 
 
 				NfcIsEnabled = CrossNFC.Current.IsEnabled;
 				if (!NfcIsEnabled)
 				{
-					contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisdissabled, "Zrusit");
+					contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisdissabled, Mraznicka.Resources.AppResources.zrusit);
 				}
 
 
@@ -113,12 +129,15 @@ namespace Mraznicka.ViewModels.Vyber
 
 		private async void OnVyber()
 		{
-			
+
 			bool answer = await contentPage.DisplayAlert(Resources.AppResources.vymazaniezaznamu, Resources.AppResources.naozajchcetevymazatzaznam, Resources.AppResources.ano, Resources.AppResources.nie);
 			if (answer)
 			{
-				DataStore.DeleteItem(Item.Id);
-				Shell.Current.GoToAsync("..");
+                //CrossToastPopUp.Current.ShowToastSuccess(Resources.AppResources.polozka_tag_vymazana, Plugin.Toast.Abstractions.ToastLength.Long);
+                DataStore.DeleteItem(Item.Id);
+                DMToast dt = new DMToast();
+                dt.ToastSuccess(Mraznicka.Resources.AppResources.polozka_tag_vymazana);
+                await Shell.Current.GoToAsync("..");
 			}
 		}
 
@@ -128,6 +147,10 @@ namespace Mraznicka.ViewModels.Vyber
 			Item = DataStore.GetItems().FirstOrDefault(o => o.TagID == tagId);
 			if (Item != null)
 			{
+				//hmotnost.IsVisible = true;
+				//hmotnost_g.IsVisible = true;
+				vlozene.IsVisible = true;
+				najdena_polozka.IsVisible = true;
 				ISimpleAudioPlayer _simpleAudioPlayer;
 				_simpleAudioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
 				System.IO.Stream beepStream = GetType().Assembly.GetManifestResourceStream("Mraznicka.beep-02.mp3");
@@ -147,10 +170,17 @@ namespace Mraznicka.ViewModels.Vyber
 			}
 			else
             {
-				await contentPage.DisplayAlert(Resources.AppResources.oznam, Resources.AppResources.tagsanepouziva, Resources.AppResources.ok);
-			}
+				hmotnost.IsVisible = false;
+				hmotnost_g.IsVisible = false;
+				vlozene.IsVisible = false;
+				najdena_polozka.IsVisible = false;
+                //CrossToastPopUp.Current.ShowToastError(Resources.AppResources.tagsanepouziva, Plugin.Toast.Abstractions.ToastLength.Long);
+                DMToast dt = new DMToast();
+                dt.ToastError(Mraznicka.Resources.AppResources.tagsanepouziva);
 
-			VyberCommand.ChangeCanExecute();
+            }
+
+            VyberCommand.ChangeCanExecute();
 		}
 
 		public void SubscribeEvents()
@@ -180,7 +210,9 @@ namespace Mraznicka.ViewModels.Vyber
 
 			if (_isDeviceiOS)
 				CrossNFC.Current.OniOSReadingSessionCancelled -= Current_OniOSReadingSessionCancelled;
-		}
+
+            _eventsAlreadySubscribed = false;
+        }
 
 		void Current_OnTagListeningStatusChanged(bool isListening)
 		{
@@ -190,7 +222,7 @@ namespace Mraznicka.ViewModels.Vyber
 		async void Current_OnNfcStatusChanged(bool isEnabled)
 		{
 			NfcIsEnabled = isEnabled;
-			await contentPage.DisplayAlert("Chytra Mraznicka", $"NFC has been {(isEnabled ? "enabled" : "disabled")}", "Zrusit");
+			await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, $"NFC has been {(isEnabled ? "enabled" : "disabled")}", Mraznicka.Resources.AppResources.zrusit);
 		}
 
 

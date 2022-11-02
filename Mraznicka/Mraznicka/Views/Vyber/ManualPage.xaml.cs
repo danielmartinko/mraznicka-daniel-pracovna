@@ -1,4 +1,5 @@
 ﻿using Mraznicka.ViewModels;
+using Plugin.NFC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,14 @@ namespace Mraznicka.Views.Vyber
 		{
 			base.OnAppearing();
 			this.ctx.ExecuteLoadItemsCommand();
+
+        }
+
+
+        private void Handle_SelectedZariadenieIndexChanged(object sender, System.EventArgs e)
+		{
+			this.ctx.SelectedZariadenie = ((Models.Zariadenie)(sender as Picker).SelectedItem).Id;
+			this.ctx.LoadItemsCommand.Execute(null);
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using Mraznicka.ViewModels;
+using Plugin.NFC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,11 +30,19 @@ namespace Mraznicka.Views
 
 			pckTovar.SelectedIndex = 0;
 			pckZariadenie.SelectedIndex = 0;
+            try
+            {
+                CrossNFC.Current.StartListening();
+                CrossNFC.Current.StartPublishing(true);
+            }
+            catch (Exception ex)
+            {
+            }
 
-		}
+        }
 
 
-		private void Handle_SelectedTovarIndexChanged(object sender, System.EventArgs e)
+        private void Handle_SelectedTovarIndexChanged(object sender, System.EventArgs e)
 		{
 			//Models.Tovar selectedOption = (Models.Tovar)(sender as Picker).SelectedItem;
 			_viewModel.SelectedTovar = ((Models.Tovar)(sender as Picker).SelectedItem).Id;

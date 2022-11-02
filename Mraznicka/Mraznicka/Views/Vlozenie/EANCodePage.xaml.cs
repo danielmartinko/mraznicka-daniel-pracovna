@@ -46,8 +46,6 @@ namespace Mraznicka.Views.Vlozenie
 					// Feature not supported on device
 				}
 
-
-
 				ctx.Item.TagID = result.Text;
 				//await DisplayAlert("Uspesne naskenovany EAN", result.Text, "OK");
 			});

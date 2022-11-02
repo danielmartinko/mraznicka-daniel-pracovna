@@ -7,6 +7,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using Plugin.Toast;
+using Xamarin.Essentials;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace Mraznicka.ViewModels.Polozka
 {
@@ -29,8 +32,11 @@ namespace Mraznicka.ViewModels.Polozka
             get { return selectedTovar; }
             set
             {
-                SetProperty(ref selectedTovar, value);
-                Item.Tovar = value.Id;
+                if( value != null)
+                {
+                    SetProperty(ref selectedTovar, value);
+                    Item.Tovar = value.Id;
+                }
             }
         }
 
@@ -50,8 +56,11 @@ namespace Mraznicka.ViewModels.Polozka
             get { return selectedPozicia; }
             set
             {
-                SetProperty(ref selectedPozicia, value);
-                Item.Pozicia = value.Id;
+                if( value != null)
+                {
+                    SetProperty(ref selectedPozicia, value);
+                    Item.Pozicia = value.Id;
+                }
             }
         }
 
@@ -71,8 +80,11 @@ namespace Mraznicka.ViewModels.Polozka
             get { return selectedZariadenie; }
             set
             {
-                SetProperty(ref selectedZariadenie, value);
-                Item.Zariadenie = value.Id;
+                if( value != null )
+                {
+                    SetProperty(ref selectedZariadenie, value);
+                    Item.Zariadenie = value.Id;
+                }
             }
         }
 
@@ -85,7 +97,7 @@ namespace Mraznicka.ViewModels.Polozka
                 SetProperty(ref selectedZariadenieIndex, value);
             }
         }
-        public Command ItemPullCommang { get; }
+        public Command ItemPullCommand { get; }
 
         public Command SaveCommand { get; }
         public Command DeleteCommand { get; }
@@ -113,7 +125,7 @@ namespace Mraznicka.ViewModels.Polozka
             contentPage = page;
             SaveCommand = new Command(OnSave, ValidateSave);
             DeleteCommand = new Command(OnDelete);
-            ItemPullCommang = new Command(OnItemPull);
+            ItemPullCommand = new Command(OnItemPull);
 
             Item.PropertyChanged += (o, e) => SaveCommand.ChangeCanExecute();
 
@@ -121,9 +133,7 @@ namespace Mraznicka.ViewModels.Polozka
             Pozicie = new ObservableCollection<Models.Pozicia>();
             Zariadenia = new ObservableCollection<Models.Zariadenie>();
 
-            Populate();
-
-       
+            Populate();       
 
         }
 
@@ -191,22 +201,19 @@ namespace Mraznicka.ViewModels.Polozka
 
         private async void OnDelete()
         {
-            bool answer = await contentPage.DisplayAlert(Resources.AppResources.vymazaniezaznamu, Resources.AppResources.naozajchcetevymazatzaznam, Resources.AppResources.ano, Resources.AppResources.nie);
-            if (answer)
-            {
-                var itemsa = DataStore.GetItems(true).ToList();
+            //CrossToastPopUp.Current.ShowToastSuccess(Mraznicka.Resources.AppResources.polozka_ean_vymazana, Plugin.Toast.Abstractions.ToastLength.Long);
 
-                DataStore.DeleteItem(Item.Id);
-                // This will pop the current page off the navigation stack
-
-                var itemsb = DataStore.GetItems(true).ToList();
-                await Shell.Current.Navigation.PopToRootAsync();
-            }
+            DataStore.DeleteItem(Item.Id);
+            DMToast dt = new DMToast();
+            dt.ToastSuccess(Mraznicka.Resources.AppResources.polozka_ean_vymazana);
+            await Shell.Current.Navigation.PopToRootAsync();
         }
 
         private void OnSave()
         {
             DataStore.UpdateItem(Item);
+            Populate();
+            // LoadItemId(Item.Id);
             // This will pop the current page off the navigation stack
             Shell.Current.GoToAsync("..");
         }
@@ -223,7 +230,15 @@ namespace Mraznicka.ViewModels.Polozka
                     await Shell.Current.GoToAsync($"CompareEanPage?{nameof(ViewModels.Polozka.DetailViewModel.ItemId)}={Item.Id}");
                     break;
                 case 3:
-                    await Shell.Current.GoToAsync($"CompareManualPage?{nameof(ViewModels.Polozka.DetailViewModel.ItemId)}={Item.Id}");
+                    // await Shell.Current.GoToAsync($"CompareManualPage?{nameof(ViewModels.Polozka.DetailViewModel.ItemId)}={Item.Id}");
+                    bool answer = await contentPage.DisplayAlert(Resources.AppResources.vymazaniezaznamu, Resources.AppResources.naozajchcetevymazatzaznam, Resources.AppResources.ano, Resources.AppResources.nie);
+                    if (answer)
+                    {
+                        DataStore.DeleteItem(Item.Id);
+                        DMToast dt = new DMToast();
+                        dt.ToastMessage(Mraznicka.Resources.AppResources.polozka_bola_vymazana);
+                        await Shell.Current.GoToAsync("..");
+                    }
                     break;
                 default:
                     await Shell.Current.GoToAsync($"VyberManualPage?{nameof(ViewModels.Polozka.DetailViewModel.ItemId)}={Item.Id}");
@@ -235,7 +250,6 @@ namespace Mraznicka.ViewModels.Polozka
         {
             try
             {
-
 
                 Tovary.Clear();
                 Zariadenia.Clear();
@@ -259,7 +273,6 @@ namespace Mraznicka.ViewModels.Polozka
             catch (Exception ex)
             { 
             }
-
 
         }
     }

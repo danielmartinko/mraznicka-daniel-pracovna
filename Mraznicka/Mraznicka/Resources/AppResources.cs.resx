@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about" xml:space="preserve">
+    <value>O mrazničce</value>
+  </data>
+  <data name="about_mysli" xml:space="preserve">
+    <value>která myslí za Vás</value>
+  </data>
+  <data name="about_riadok_1" xml:space="preserve">
+    <value>Po jednoduchém prvotním připojení, které zvládnete sami, vám telefon umožní následující využití a výhody:</value>
+  </data>
+  <data name="about_riadok_2" xml:space="preserve">
+    <value>- Připomenutí data vypršení platnosti.</value>
+  </data>
+  <data name="about_riadok_3" xml:space="preserve">
+    <value>- Stálý přehled obsahu mrazničky na Vašem telefonu (kdekoli a kdykoli).</value>
+  </data>
+  <data name="about_riadok_4" xml:space="preserve">
+    <value>- Usnadní plánování nákupů a vaření.</value>
+  </data>
+  <data name="about_riadok_5" xml:space="preserve">
+    <value>- Rychlé vyhledávání potravin v mrazničce.</value>
+  </data>
+  <data name="about_riadok_6" xml:space="preserve">
+    <value>- Všechny funkce využijete například v lednici nebo při zavařování.</value>
+  </data>
+  <data name="ano" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="bravcove" xml:space="preserve">
+    <value>Vepřové</value>
+  </data>
+  <data name="bylinky" xml:space="preserve">
+    <value>Bylinky</value>
+  </data>
+  <data name="chytra_mraznicka" xml:space="preserve">
+    <value>Chytrá mraznička</value>
+  </data>
+  <data name="cukrovinky" xml:space="preserve">
+    <value>Cukrovinky</value>
+  </data>
+  <data name="datumvytvorenia" xml:space="preserve">
+    <value>Datum vytvoření</value>
+  </data>
+  <data name="den" xml:space="preserve">
+    <value> den</value>
+  </data>
+  <data name="detailmiestnosti" xml:space="preserve">
+    <value>Podrobný popis místnosti</value>
+  </data>
+  <data name="detailpolozky" xml:space="preserve">
+    <value>Podrobný popis položky</value>
+  </data>
+  <data name="detailpozicie" xml:space="preserve">
+    <value>Podrobný popis pozice</value>
+  </data>
+  <data name="detailtovaru" xml:space="preserve">
+    <value>Podrobný popis potraviny</value>
+  </data>
+  <data name="detailzariadenia" xml:space="preserve">
+    <value>Detail zařízení</value>
+  </data>
+  <data name="dni" xml:space="preserve">
+    <value> dni</value>
+  </data>
+  <data name="dní" xml:space="preserve">
+    <value> dní</value>
+  </data>
+  <data name="do_expiracie" xml:space="preserve">
+    <value>Do expirace </value>
+  </data>
+  <data name="ean" xml:space="preserve">
+    <value>EAN</value>
+  </data>
+  <data name="eansanepouziva" xml:space="preserve">
+    <value>EAN se nepoužívá</value>
+  </data>
+  <data name="emptytag" xml:space="preserve">
+    <value>Prázdný TAG</value>
+  </data>
+  <data name="expiracia" xml:space="preserve">
+    <value>Expirace</value>
+  </data>
+  <data name="expiraciadni" xml:space="preserve">
+    <value>Expirace (dny)</value>
+  </data>
+  <data name="factory_settings" xml:space="preserve">
+    <value>Původní nastavení</value>
+  </data>
+  <data name="factory_settings_title" xml:space="preserve">
+    <value>Původní nastavení</value>
+  </data>
+  <data name="factory_setting_otazka_text" xml:space="preserve">
+    <value>Opravdu chcete nastavit původní nastavení? Pokud to potvrdíte, smažou se všechny položky!</value>
+  </data>
+  <data name="factory_setting_otazka_title" xml:space="preserve">
+    <value>Původní nastavení</value>
+  </data>
+  <data name="filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="formatingtagoperationsucceessful" xml:space="preserve">
+    <value>Formátování proběhlo správně</value>
+  </data>
+  <data name="hladana_polozka" xml:space="preserve">
+    <value>Hledaná položka</value>
+  </data>
+  <data name="hmotnost" xml:space="preserve">
+    <value>Hmotnost (g)</value>
+  </data>
+  <data name="hotovejedlo" xml:space="preserve">
+    <value>Hotové jídlo</value>
+  </data>
+  <data name="hovadzie" xml:space="preserve">
+    <value>Hovězí</value>
+  </data>
+  <data name="hydina" xml:space="preserve">
+    <value>Drůbež</value>
+  </data>
+  <data name="icon" xml:space="preserve">
+    <value>Ikona</value>
+  </data>
+  <data name="ine" xml:space="preserve">
+    <value>Jiné</value>
+  </data>
+  <data name="informacieweb" xml:space="preserve">
+    <value>Informace na Webu</value>
+  </data>
+  <data name="kategoria" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="kuracie" xml:space="preserve">
+    <value>Kuřecí</value>
+  </data>
+  <data name="licencnecislo" xml:space="preserve">
+    <value>Licenční číslo</value>
+  </data>
+  <data name="manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="manualnyvyber" xml:space="preserve">
+    <value>Manuální výběr</value>
+  </data>
+  <data name="masovevyrobky" xml:space="preserve">
+    <value>Masné výrobky</value>
+  </data>
+  <data name="mliecnevyrobky" xml:space="preserve">
+    <value>Mléčné výrobky</value>
+  </data>
+  <data name="musiexistovataspomjedenzaznam" xml:space="preserve">
+    <value>Musí být nalezena alespoň jedna položka</value>
+  </data>
+  <data name="najdena_polozka" xml:space="preserve">
+    <value>Nalezena položka</value>
+  </data>
+  <data name="naozajchcetevymazatzaznam" xml:space="preserve">
+    <value>Opravdu chcete záznam vymazat?</value>
+  </data>
+  <data name="nazov" xml:space="preserve">
+    <value>Název</value>
+  </data>
+  <data name="neplatny_licencny_kluc" xml:space="preserve">
+    <value>Licenčný klíč je neplatný</value>
+  </data>
+  <data name="nepuzivany_tag" xml:space="preserve">
+    <value>TAG is not used</value>
+  </data>
+  <data name="nespravny_ean" xml:space="preserve">
+    <value>EAN se nezhoduje</value>
+  </data>
+  <data name="nespravny_tag" xml:space="preserve">
+    <value>TAG se nezhoduje</value>
+  </data>
+  <data name="nfcisdissabled" xml:space="preserve">
+    <value>NFC není povoleno</value>
+  </data>
+  <data name="nfcisnotavailable" xml:space="preserve">
+    <value>NFC není přístupné</value>
+  </data>
+  <data name="nie" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="niejemoznevymazatzaznam" xml:space="preserve">
+    <value>Není možné vymazat položku</value>
+  </data>
+  <data name="notagfound" xml:space="preserve">
+    <value>TAG nebyl nalezen</value>
+  </data>
+  <data name="novamiestnost" xml:space="preserve">
+    <value>Nová místnost</value>
+  </data>
+  <data name="novapolozka" xml:space="preserve">
+    <value>Nová položka</value>
+  </data>
+  <data name="novapozicia" xml:space="preserve">
+    <value>Nová pozíce</value>
+  </data>
+  <data name="novezariadenie" xml:space="preserve">
+    <value>Nové zařížení</value>
+  </data>
+  <data name="novytovar" xml:space="preserve">
+    <value>Nové zboží</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ovocie" xml:space="preserve">
+    <value>Ovoce</value>
+  </data>
+  <data name="oznam" xml:space="preserve">
+    <value>Oznam</value>
+  </data>
+  <data name="o_mraznicke" xml:space="preserve">
+    <value>O mrazničce</value>
+  </data>
+  <data name="pecivo" xml:space="preserve">
+    <value>Pečivo</value>
+  </data>
+  <data name="polotovar" xml:space="preserve">
+    <value>Polotovar</value>
+  </data>
+  <data name="polozka_bola_vymazana" xml:space="preserve">
+    <value>Položka byla vymazána</value>
+  </data>
+  <data name="polozka_ean_vymazana" xml:space="preserve">
+    <value>Položka EAN byla vymazána</value>
+  </data>
+  <data name="polozka_tag_vymazana" xml:space="preserve">
+    <value>Položka TAG byla vymazána</value>
+  </data>
+  <data name="popis" xml:space="preserve">
+    <value>Popis</value>
+  </data>
+  <data name="popispoziciadetail" xml:space="preserve">
+    <value>Zobrazení pozice detailně</value>
+  </data>
+  <data name="popispozicialist" xml:space="preserve">
+    <value>Zobrazení popisu pozic</value>
+  </data>
+  <data name="popispoziciavytvorenie" xml:space="preserve">
+    <value>Vytvoření pozice</value>
+  </data>
+  <data name="popistovardetail" xml:space="preserve">
+    <value>Zobrazení zboží detailně</value>
+  </data>
+  <data name="popistovarvytvorenie" xml:space="preserve">
+    <value>Vytvoření tovaru</value>
+  </data>
+  <data name="popistovarzoznam" xml:space="preserve">
+    <value>Zobrazení seznamu zboží</value>
+  </data>
+  <data name="popisvlozenie" xml:space="preserve">
+    <value>Popis vložení</value>
+  </data>
+  <data name="popisvyber" xml:space="preserve">
+    <value>Umožňuje vybrat položku pomocí hledání</value>
+  </data>
+  <data name="popiszariadeniedetail" xml:space="preserve">
+    <value>Zobrazení seznamu zařízení detailně</value>
+  </data>
+  <data name="popiszariadenievytvorenie" xml:space="preserve">
+    <value>Vytvoření seznamu zařízení</value>
+  </data>
+  <data name="popiszariadeniezoznam" xml:space="preserve">
+    <value>Popis zařízení seznam</value>
+  </data>
+  <data name="poslednepouzite" xml:space="preserve">
+    <value>Poslední použité</value>
+  </data>
+  <data name="pozicia" xml:space="preserve">
+    <value>Pozice</value>
+  </data>
+  <data name="poznamka" xml:space="preserve">
+    <value>Poznámka</value>
+  </data>
+  <data name="po_expiracii" xml:space="preserve">
+    <value>Po expiraci </value>
+  </data>
+  <data name="prehlad" xml:space="preserve">
+    <value>Přehled</value>
+  </data>
+  <data name="prehlad_main" xml:space="preserve">
+    <value>Přehled s výběrem</value>
+  </data>
+  <data name="pridat" xml:space="preserve">
+    <value>Přidat</value>
+  </data>
+  <data name="recordcantbenull" xml:space="preserve">
+    <value>Záznam nemůže být prázdný</value>
+  </data>
+  <data name="registracia_prebehla_uspesne" xml:space="preserve">
+    <value>Registrace proběhla úspešne</value>
+  </data>
+  <data name="restore" xml:space="preserve">
+    <value>Obnovit</value>
+  </data>
+  <data name="ryby" xml:space="preserve">
+    <value>Ryby</value>
+  </data>
+  <data name="spravny_ean" xml:space="preserve">
+    <value>EAN se zhoduje</value>
+  </data>
+  <data name="spravny_tag" xml:space="preserve">
+    <value>TAG se zhoduje</value>
+  </data>
+  <data name="suflik" xml:space="preserve">
+    <value>Pozice</value>
+  </data>
+  <data name="tag" xml:space="preserve">
+    <value>TAG</value>
+  </data>
+  <data name="tagid" xml:space="preserve">
+    <value>Identifikační číslo TAG</value>
+  </data>
+  <data name="taginfo" xml:space="preserve">
+    <value>Informace o TAG</value>
+  </data>
+  <data name="tagsanepouziva" xml:space="preserve">
+    <value>TAG se nepoužívá</value>
+  </data>
+  <data name="tag_sa_uz_pouziva" xml:space="preserve">
+    <value>Tag se už používa</value>
+  </data>
+  <data name="telefon_ku_ean" xml:space="preserve">
+    <value>Přiložte telefon k EAN-u</value>
+  </data>
+  <data name="telefon_ku_tag" xml:space="preserve">
+    <value>Přiložte telefon k TAG-u</value>
+  </data>
+  <data name="tovar" xml:space="preserve">
+    <value>Tovar</value>
+  </data>
+  <data name="ulozit" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="unsupportedtag" xml:space="preserve">
+    <value>Nepodporovaný TAG</value>
+  </data>
+  <data name="userhascancelnfcsession" xml:space="preserve">
+    <value>userhascancelnfcsession</value>
+  </data>
+  <data name="uvod" xml:space="preserve">
+    <value>Úvodní stránka</value>
+  </data>
+  <data name="uvodnastranka" xml:space="preserve">
+    <value>Úvodní stránka</value>
+  </data>
+  <data name="uvodnastranka_text" xml:space="preserve">
+    <value>Tato aplikace Vám umožní kontrolovat co, kde a jak dlouho máte uloženo v mrazničce.</value>
+  </data>
+  <data name="verzia" xml:space="preserve">
+    <value>Verze</value>
+  </data>
+  <data name="verzia_cislo_cz" xml:space="preserve">
+    <value>toto nechceme meniť v lokalizacii</value>
+  </data>
+  <data name="vlozene" xml:space="preserve">
+    <value>Vloženo:</value>
+  </data>
+  <data name="vlozenie" xml:space="preserve">
+    <value>Vložení</value>
+  </data>
+  <data name="vlozeniemanualne" xml:space="preserve">
+    <value>Manuální vložení</value>
+  </data>
+  <data name="vlozeniepomocouean" xml:space="preserve">
+    <value>Vložení pomocí EAN</value>
+  </data>
+  <data name="vlozeniepomocoutag" xml:space="preserve">
+    <value>Vložení pomocí TAG</value>
+  </data>
+  <data name="vlozenie_prebehlo_uspesne" xml:space="preserve">
+    <value>Vložení proběhlo úspěšně</value>
+  </data>
+  <data name="vyber" xml:space="preserve">
+    <value>Výběr</value>
+  </data>
+  <data name="vyberpomocouean" xml:space="preserve">
+    <value>Výběr pomocí EAN</value>
+  </data>
+  <data name="vyberpomocoutag" xml:space="preserve">
+    <value>Výběr pomocí TAG</value>
+  </data>
+  <data name="vyberte_tovar_vsetko" xml:space="preserve">
+    <value>Vyberte zboží - vše</value>
+  </data>
+  <data name="vyberte_zariadenia_vsetky" xml:space="preserve">
+    <value>Vyberte zařízení - všechna</value>
+  </data>
+  <data name="vyber_main" xml:space="preserve">
+    <value>Výběr</value>
+  </data>
+  <data name="vymazaniezaznamu" xml:space="preserve">
+    <value>Vymazání záznamu</value>
+  </data>
+  <data name="writingtagisnotsupportedonthisdevice" xml:space="preserve">
+    <value>Zápis do TAG je nepodporován</value>
+  </data>
+  <data name="writingtagoperationsuccessful" xml:space="preserve">
+    <value>Zápis do TAG proběhl úspěšně</value>
+  </data>
+  <data name="zadajteexpiraciu" xml:space="preserve">
+    <value>Zadejte datum expirace</value>
+  </data>
+  <data name="zadajtehmotnost" xml:space="preserve">
+    <value>Zadejte hmotnost (g)</value>
+  </data>
+  <data name="zadajtelicencnecislo" xml:space="preserve">
+    <value>Zadejte licenční číslo</value>
+  </data>
+  <data name="zadajtenazov" xml:space="preserve">
+    <value>Zadejte název</value>
+  </data>
+  <data name="zadajtepopis" xml:space="preserve">
+    <value>Tento udaj je povinný</value>
+  </data>
+  <data name="zadajtepoznamku" xml:space="preserve">
+    <value>Zadejte poznámku</value>
+  </data>
+  <data name="zadajte_opis_popisu" xml:space="preserve">
+    <value>Zadejte část textu popisu</value>
+  </data>
+  <data name="zadajte_popis" xml:space="preserve">
+    <value>Tento údaj je povinný</value>
+  </data>
+  <data name="zadajte_poznamku" xml:space="preserve">
+    <value>Zadejte poznámku</value>
+  </data>
+  <data name="zapisnatag" xml:space="preserve">
+    <value>Zápis na TAG</value>
+  </data>
+  <data name="zariadenie" xml:space="preserve">
+    <value>Zařízení</value>
+  </data>
+  <data name="zaznamneexistuje" xml:space="preserve">
+    <value>Záznam nexistuje</value>
+  </data>
+  <data name="zelenina" xml:space="preserve">
+    <value>Zelenina</value>
+  </data>
+  <data name="zmazat" xml:space="preserve">
+    <value>Smazat</value>
+  </data>
+  <data name="zoznammiestnosti" xml:space="preserve">
+    <value>Seznam místností</value>
+  </data>
+  <data name="zoznampoloziek" xml:space="preserve">
+    <value>Seznam položek</value>
+  </data>
+  <data name="zoznampozicii" xml:space="preserve">
+    <value>Seznam pozic</value>
+  </data>
+  <data name="zoznamtovarov" xml:space="preserve">
+    <value>Seznam kategorií</value>
+  </data>
+  <data name="zoznamzariadeni" xml:space="preserve">
+    <value>Seznam zařízení</value>
+  </data>
+  <data name="zrusit" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="zverina" xml:space="preserve">
+    <value>Zvěřina</value>
+  </data>
+</root>

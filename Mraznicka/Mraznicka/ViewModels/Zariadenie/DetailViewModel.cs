@@ -86,6 +86,8 @@ namespace Mraznicka.ViewModels.Zariadenie
                 if (answer)
                 {
                     DataStore.DeleteItem(Item.Id);
+                    DMToast dt = new DMToast();
+                    dt.ToastMessage(Mraznicka.Resources.AppResources.polozka_bola_vymazana);
                     // This will pop the current page off the navigation stack
                     Shell.Current.GoToAsync("..");
                 }

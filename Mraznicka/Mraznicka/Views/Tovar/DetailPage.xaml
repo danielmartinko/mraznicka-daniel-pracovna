@@ -9,7 +9,8 @@
 
 	<ContentPage.Resources>
 		<converters:TovarToImageConverter x:Key="tovarToImageConverter" />
-	</ContentPage.Resources>
+        <converters:DayConverter x:Key="dayConverter" />
+    </ContentPage.Resources>
 
 
 	<RelativeLayout>
@@ -35,7 +36,7 @@
 			
             <StackLayout>
 				<Label Text="{i18n:Translate expiraciadni}" Style="{DynamicResource KeyLabel}" />
-				<Entry Text="{Binding Item.Expiracia, Mode=TwoWay}" WidthRequest="50"  Keyboard="Numeric" Style="{StaticResource ValueEntry}" Placeholder="{i18n:Translate zadajteexpiraciu}" />
+                <Entry Text="{Binding Item.Expiracia, Mode=TwoWay }" WidthRequest="50"  Keyboard="Numeric" Style="{StaticResource ValueEntry}" Placeholder="{i18n:Translate zadajteexpiraciu}" />
             </StackLayout>
 
 		</StackLayout>

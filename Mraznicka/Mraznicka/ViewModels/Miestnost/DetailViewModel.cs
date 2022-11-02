@@ -69,15 +69,17 @@ namespace Mraznicka.ViewModels.Miestnost
 		private void OnDelete()
 		{
 			DataStore.DeleteItem(Item.Id);
-			// This will pop the current page off the navigation stack
-			Shell.Current.GoToAsync("..");
+            DMToast dt = new DMToast();
+            dt.ToastMessage(Mraznicka.Resources.AppResources.polozka_bola_vymazana);
+
+            Shell.Current.GoToAsync("..");
 		}
 
 		private async void OnSave()
 		{
 			DataStore.UpdateItem(Item);
 			// This will pop the current page off the navigation stack
-			Shell.Current.GoToAsync("..");
+			await Shell.Current.GoToAsync("..");
 		}
 	}
 }

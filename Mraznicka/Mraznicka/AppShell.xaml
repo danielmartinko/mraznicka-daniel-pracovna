@@ -9,6 +9,8 @@
 	   xmlns:polozka="clr-namespace:Mraznicka.Views.Polozka"
 	   xmlns:pages="clr-namespace:Mraznicka"
 	   xmlns:sys="clr-namespace:System;assembly=netstandard"
+       xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+       
        Title="Chytrá mraznička"
        x:Class="Mraznicka.AppShell">
 
@@ -18,7 +20,7 @@
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
 
-	<Shell.Resources>
+    <Shell.Resources>
 		<ResourceDictionary>
 			<Style x:Key="BaseStyle" TargetType="Element">
 				<Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
@@ -116,11 +118,11 @@
 		<ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
 	</FlyoutItem>-->
 
-	<FlyoutItem Title="Úvod" Icon="icon_item.png">
+    <FlyoutItem Title="{i18n:Translate uvod}" Icon="icon_item.png">
 		<ShellContent ContentTemplate="{DataTemplate views:MainPage}" />
 	</FlyoutItem>
 
-	<FlyoutItem Title="O mrazničke" Icon="icon_item.png">
+    <FlyoutItem Title="{i18n:Translate o_mraznicke}" Icon="icon_item.png">
 		<ShellContent ContentTemplate="{DataTemplate views:AboutPage}" />
 	</FlyoutItem>
 
@@ -143,16 +145,19 @@
 	<!--<FlyoutItem Title="Miestnost" Icon="icon_locality.png">
 		<ShellContent ContentTemplate="{DataTemplate miestnost:ListPage}" />
 	</FlyoutItem>-->
-	<FlyoutItem Title="Pozicia" Icon="icon_position.png">
+    <FlyoutItem Title="{i18n:Translate pozicia}" Icon="icon_position.png">
 		<ShellContent ContentTemplate="{DataTemplate pozicia:ListPage}" />
 	</FlyoutItem>
-	<FlyoutItem Title="Kategorie" Icon="icon_comodity.png">
+    <FlyoutItem Title="{i18n:Translate kategoria}" Icon="icon_comodity.png">
 		<ShellContent ContentTemplate="{DataTemplate tovar:ListPage}" />
 	</FlyoutItem>
-	<FlyoutItem Title="Zariadenie" Icon="icon_device.png">
+    <FlyoutItem Title="{i18n:Translate zariadenie}" Icon="icon_device.png">
 		<ShellContent ContentTemplate="{DataTemplate zariadenie:ListPage}" />
 	</FlyoutItem>
-	<!--<FlyoutItem Title="Položka" Icon="icon_item.png">
+    <FlyoutItem Title="{i18n:Translate factory_settings}" Icon="icon_device.png">
+        <ShellContent ContentTemplate="{DataTemplate views:FactoryPage}" />
+    </FlyoutItem>
+    <!--<FlyoutItem Title="Položka" Icon="icon_item.png">
 		<ShellContent ContentTemplate="{DataTemplate polozka:ListPage}" />
 	</FlyoutItem>-->
 

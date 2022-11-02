@@ -18,7 +18,7 @@ namespace Mraznicka.Helpers
                 return null;
 
             //AppResources.Culture = new System.Globalization.CultureInfo("pl-PL");
-
+            
             return AppResources.ResourceManager.GetString(Text, AppResources.Culture);
             //return AppResources.ResourceManager.GetString(Text, System.Threading.Thread.CurrentThread.CurrentUICulture);
             //return AppResources.ResourceManager.GetString(Text);

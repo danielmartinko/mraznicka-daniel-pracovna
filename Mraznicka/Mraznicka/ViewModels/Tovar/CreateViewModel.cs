@@ -48,7 +48,7 @@ namespace Mraznicka.ViewModels.Tovar
 			var exist = Items.FirstOrDefault(o => o.Nazov == Item.Nazov) != null;
 			if (exist)
 			{
-				contentPage.DisplayAlert(Resources.AppResources.zaznamexistuje, Resources.AppResources.zaznamexistuje, Resources.AppResources.zrusit);
+				contentPage.DisplayAlert(Resources.AppResources.zaznamneexistuje, Resources.AppResources.zaznamneexistuje, Resources.AppResources.zrusit);
 			}
 			else
 			{

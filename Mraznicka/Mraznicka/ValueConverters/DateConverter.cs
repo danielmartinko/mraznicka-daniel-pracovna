@@ -11,7 +11,7 @@ namespace Mraznicka.ValueConverters
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return ((DateTime)value).ToString("dd.MM.yyyy");
+            return ((DateTime)value).ToString("d.M.yyyy");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

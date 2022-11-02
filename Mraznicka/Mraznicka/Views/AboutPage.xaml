@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:system="clr-namespace:System;assembly=netstandard"
              x:Class="Mraznicka.Views.AboutPage"
-             Title="{Binding Title}">
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers"              
+             Title="{i18n:Translate about}">
 
 	<ContentPage.Resources>
 		<ResourceDictionary>
@@ -18,34 +19,34 @@
 		</Grid.RowDefinitions>
 		<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
 			<StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-				<ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
+				<ContentView Padding="0,-10,0,-20" VerticalOptions="FillAndExpand">
 					<Image Source="logo.png" VerticalOptions="Center" HeightRequest="128" />
 				</ContentView>
 			</StackLayout>
 		</StackLayout>
 		<ScrollView Grid.Row="1">
 			<StackLayout Orientation="Vertical" Padding="30,0,30,0" Spacing="10">
-				<Label TextColor="{StaticResource Primary}"  Text="Mraznička, ktorá myslí za Vás" FontSize="Title"/>
-				<Label FontSize="16" TextColor="#888">
+                <Label TextColor="{StaticResource Primary}"  Text="{i18n:Translate about_mysli}" FontSize="Title"/>
+				<Label FontSize="14" TextColor="#888">
 					<Label.FormattedText>
 						<FormattedString>
-								<Span Text="Po jednoduchom prvotnom prepojení, ktoré zvládnete sami, Vám Váš telefón umožní tieto využitia a výhody:"/>
+                            <Span Text="{i18n:Translate about_riadok_1}"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                            <Span Text="Pripomienky dátumov spotreby." FontAttributes="Bold"/>
+                            <Span Text="{i18n:Translate about_riadok_2}"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                            <Span Text="Stály prehľad obsahu mrazničky na Vašom telefóne (kdekoľvek a kedykoľvek)." FontAttributes="Bold"/>
+                            <Span Text="{i18n:Translate about_riadok_3}"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                            <Span Text="Uľahčí plánovanie nákupov a varenia" FontAttributes="Bold"/>
+                            <Span Text="{i18n:Translate about_riadok_4}"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                            <Span Text="Rýchle vyhľadávanie potravín v mrazničke." FontAttributes="Bold"/>
+                            <Span Text="{i18n:Translate about_riadok_5}"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                            <Span Text="Všetky funkcie môžete využiť napríklad aj pri zaváraninách." FontAttributes="Bold"/>
+                            <Span Text="{i18n:Translate about_riadok_6}" />
 						</FormattedString>
 					</Label.FormattedText>
 				</Label>
                 <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
                     <StackLayout>
-                        <Button Text="Informácie na webe..." Image="icon_about.png" ContentLayout="Left,20" Command="{Binding OpenWebCommand}" Margin="0,150,0,0" />
+                        <Button Text="{i18n:Translate informacieweb}" Image="icon_about.png" ContentLayout="Left,20" Command="{Binding OpenWebCommand}" Margin="0,150,0,0" />
                     </StackLayout>
 
                 </RelativeLayout>

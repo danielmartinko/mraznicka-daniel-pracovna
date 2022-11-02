@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mraznicka.Views.Polozka.DetailPageZmazanie"
+			 xmlns:converters="clr-namespace:Mraznicka.ValueConverters"
+			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+			 Title="{i18n:Translate detailpolozky}">
+
+    <ContentPage.Resources>
+        <converters:ZariadenieConverter x:Key="zariadenieConverter" />
+        <converters:MiestnostConverter x:Key="miestnostConverter" />
+        <converters:PoziciaConverter x:Key="poziciaConverter" />
+        <converters:TovarConverter x:Key="tovarConverter" />
+        <converters:DateConverter x:Key="dateConverter" />
+        <converters:DayConverter x:Key="dayConverter" />
+        <converters:SerialNumberConverter x:Key="serialnumberConverter" />
+    </ContentPage.Resources>
+
+    <RelativeLayout>
+
+        <ScrollView Style="{StaticResource MainSroll}" Margin="20,0,20,130" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+            <StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate kategoria}" Style="{DynamicResource KeyLabel}" FontSize="20" FontAttributes="None" MinimumWidthRequest="150"/>
+                    <Picker x:Name="pckTovar" Title="{i18n:Translate tovar}" Style="{StaticResource ValuePicker}" ItemsSource="{Binding Tovary}" ItemDisplayBinding="{Binding Nazov}" SelectedItem="{Binding SelectedTovar}" SelectedIndex="{Binding SelectedTovarIndex}" WidthRequest="250" TextColor="Black" FontSize="20" FontAttributes="Bold"></Picker>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate popis}" Style="{DynamicResource KeyLabel}" FontSize="20" FontAttributes="None" MinimumWidthRequest="150"/>
+                    <Entry Text="{Binding Item.Popis, Mode=TwoWay}" Style="{DynamicResource ValueEntry}" Placeholder="{i18n:Translate zadajtepopis}" HorizontalOptions="FillAndExpand" FontSize="20" WidthRequest="250" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate zariadenie}" Style="{DynamicResource KeyLabel}" FontSize="20" FontAttributes="None" MinimumWidthRequest="150"/>
+                    <Picker x:Name="pckZariadenie" Title="{i18n:Translate zariadenie}" Style="{StaticResource ValuePicker}" ItemsSource="{Binding Zariadenia}" ItemDisplayBinding="{Binding Nazov}" SelectedItem="{Binding SelectedZariadenie}" SelectedIndex="{Binding SelectedZariadenieIndex}" WidthRequest="250" TextColor="Black" FontSize="20" FontAttributes="Bold"></Picker>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate pozicia}" Style="{DynamicResource KeyLabel}" FontSize="20" FontAttributes="None" MinimumWidthRequest="150"/>
+                    <Picker x:Name="pckPozicia" Title="{i18n:Translate pozicia}" Style="{StaticResource ValuePicker}" ItemsSource="{Binding Pozicie}" ItemDisplayBinding="{Binding Nazov}" SelectedItem="{Binding SelectedPozicia}" SelectedIndex="{Binding SelectedPoziciaIndex}" WidthRequest="300" TextColor="Black" FontSize="20" FontAttributes="Bold"></Picker>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate hmotnost}" Style="{DynamicResource KeyLabel}" FontSize="20" FontAttributes="None" MinimumWidthRequest="200"/>
+                    <Entry Text="{Binding Item.Hmotnost, StringFormat='{0}'}" Style="{DynamicResource EntryStyle}" Placeholder="{i18n:Translate zadajtehmotnost}" Keyboard="Numeric" FontAttributes="Bold" WidthRequest="250"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate poznamka}" Style="{DynamicResource KeyLabel}" FontSize="20" FontAttributes="None" MinimumWidthRequest="150"/>
+                    <Entry Text="{Binding Item.Poznamka, Mode=TwoWay}" Style="{StaticResource EntryStyle}" Placeholder="zadajte poznamku" FontAttributes="Bold" WidthRequest="250"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate vlozenie}" FontSize="20" Style="{DynamicResource KeyLabel}" FontAttributes="None" MinimumWidthRequest="120"/>
+                    <Label Text="{Binding Item.DatumVytvorenia}" Style="{DynamicResource ValueLabel}"  FontSize="20" FontAttributes="Bold" WidthRequest="250"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{i18n:Translate expiracia}" FontSize="20" Style="{DynamicResource KeyLabel}" FontAttributes="None"/>
+                    <DatePicker Date="{Binding Item.Expiracia, Mode=TwoWay}" FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+        <RelativeLayout  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-110}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Button Text="{i18n:Translate ulozit}" Image="ikona_ano_ulozit50x50.png" ContentLayout="Left,20" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" Margin="0"></Button>
+                    <Button Text="{i18n:Translate vyber}" Image="ikona_vybrat50x50.png" ContentLayout="Left,20" Command="{Binding ItemPullCommand}" HorizontalOptions="FillAndExpand" Margin="0"></Button>
+                </StackLayout>
+                <Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFit" ></Image>
+            </StackLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</ContentPage>

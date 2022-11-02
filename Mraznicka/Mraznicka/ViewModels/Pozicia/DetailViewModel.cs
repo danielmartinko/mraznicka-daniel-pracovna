@@ -86,8 +86,10 @@ namespace Mraznicka.ViewModels.Pozicia
 				if (answer)
 				{
 					DataStore.DeleteItem(Item.Id);
-					// This will pop the current page off the navigation stack
-					Shell.Current.GoToAsync("..");
+                    DMToast dt = new DMToast();
+                    dt.ToastMessage(Mraznicka.Resources.AppResources.polozka_bola_vymazana);
+                    // This will pop the current page off the navigation stack
+                    Shell.Current.GoToAsync("..");
 				}
 			}
 			else

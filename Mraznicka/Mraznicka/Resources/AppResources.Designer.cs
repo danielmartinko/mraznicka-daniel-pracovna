@@ -61,7 +61,79 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ano.
+        ///   Looks up a localized string similar to About freezer.
+        /// </summary>
+        internal static string about {
+            get {
+                return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to        who thinks for you.
+        /// </summary>
+        internal static string about_mysli {
+            get {
+                return ResourceManager.GetString("about_mysli", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After a simple initial connection, which you can handle yourself, your phone will allow you the following uses and benefits:.
+        /// </summary>
+        internal static string about_riadok_1 {
+            get {
+                return ResourceManager.GetString("about_riadok_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Expiry date reminders..
+        /// </summary>
+        internal static string about_riadok_2 {
+            get {
+                return ResourceManager.GetString("about_riadok_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Permanent overview of the contents of the freezer on your phone (anywhere and anytime)..
+        /// </summary>
+        internal static string about_riadok_3 {
+            get {
+                return ResourceManager.GetString("about_riadok_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Makes shopping and cooking planning easier..
+        /// </summary>
+        internal static string about_riadok_4 {
+            get {
+                return ResourceManager.GetString("about_riadok_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Quick search for food in the freezer..
+        /// </summary>
+        internal static string about_riadok_5 {
+            get {
+                return ResourceManager.GetString("about_riadok_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - You can use all the functions, for example, in the refrigerator or when making preserves..
+        /// </summary>
+        internal static string about_riadok_6 {
+            get {
+                return ResourceManager.GetString("about_riadok_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
         internal static string ano {
             get {
@@ -70,7 +142,43 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to datumvytvorenia.
+        ///   Looks up a localized string similar to Pork.
+        /// </summary>
+        internal static string bravcove {
+            get {
+                return ResourceManager.GetString("bravcove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Herbs.
+        /// </summary>
+        internal static string bylinky {
+            get {
+                return ResourceManager.GetString("bylinky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clever freezer.
+        /// </summary>
+        internal static string chytra_mraznicka {
+            get {
+                return ResourceManager.GetString("chytra_mraznicka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sweets.
+        /// </summary>
+        internal static string cukrovinky {
+            get {
+                return ResourceManager.GetString("cukrovinky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creation date.
         /// </summary>
         internal static string datumvytvorenia {
             get {
@@ -79,7 +187,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to detailmiestnosti.
+        ///   Looks up a localized string similar to  Day.
+        /// </summary>
+        internal static string den {
+            get {
+                return ResourceManager.GetString("den", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Room details.
         /// </summary>
         internal static string detailmiestnosti {
             get {
@@ -88,7 +205,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to detailpolozky.
+        ///   Looks up a localized string similar to Item details.
         /// </summary>
         internal static string detailpolozky {
             get {
@@ -97,7 +214,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to detailpozicie.
+        ///   Looks up a localized string similar to Position details.
         /// </summary>
         internal static string detailpozicie {
             get {
@@ -106,7 +223,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to detailtovaru.
+        ///   Looks up a localized string similar to Goods details.
         /// </summary>
         internal static string detailtovaru {
             get {
@@ -115,7 +232,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detailný popis zariadenia.
+        ///   Looks up a localized string similar to Detailed description of the device.
         /// </summary>
         internal static string detailzariadenia {
             get {
@@ -124,7 +241,34 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ean.
+        ///   Looks up a localized string similar to  Days.
+        /// </summary>
+        internal static string dni {
+            get {
+                return ResourceManager.GetString("dni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Days.
+        /// </summary>
+        internal static string dní {
+            get {
+                return ResourceManager.GetString("dní", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Until expiration: .
+        /// </summary>
+        internal static string do_expiracie {
+            get {
+                return ResourceManager.GetString("do_expiracie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN.
         /// </summary>
         internal static string ean {
             get {
@@ -133,7 +277,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ean sa nepouziva.
+        ///   Looks up a localized string similar to EAN is not used.
         /// </summary>
         internal static string eansanepouziva {
             get {
@@ -142,7 +286,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to emptytag.
+        ///   Looks up a localized string similar to Empty TAG.
         /// </summary>
         internal static string emptytag {
             get {
@@ -151,7 +295,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expirácia.
+        ///   Looks up a localized string similar to Expiration.
         /// </summary>
         internal static string expiracia {
             get {
@@ -160,7 +304,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to expiracia (dni).
+        ///   Looks up a localized string similar to Expiration (day).
         /// </summary>
         internal static string expiraciadni {
             get {
@@ -169,20 +313,47 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to expresspull.
+        ///   Looks up a localized string similar to Realy set factory settings? All items they will be delete!.
         /// </summary>
-        internal static string expresspull {
+        internal static string factory_setting_otazka_text {
             get {
-                return ResourceManager.GetString("expresspull", resourceCulture);
+                return ResourceManager.GetString("factory_setting_otazka_text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to expresspush.
+        ///   Looks up a localized string similar to Factory settings.
         /// </summary>
-        internal static string expresspush {
+        internal static string factory_setting_otazka_title {
             get {
-                return ResourceManager.GetString("expresspush", resourceCulture);
+                return ResourceManager.GetString("factory_setting_otazka_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factory settings.
+        /// </summary>
+        internal static string factory_settings {
+            get {
+                return ResourceManager.GetString("factory_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factory settings.
+        /// </summary>
+        internal static string factory_settings_title {
+            get {
+                return ResourceManager.GetString("factory_settings_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter.
+        /// </summary>
+        internal static string filter {
+            get {
+                return ResourceManager.GetString("filter", resourceCulture);
             }
         }
         
@@ -196,7 +367,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to hmotnost ( g ).
+        ///   Looks up a localized string similar to Wanted item.
+        /// </summary>
+        internal static string hladana_polozka {
+            get {
+                return ResourceManager.GetString("hladana_polozka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weigth (g).
         /// </summary>
         internal static string hmotnost {
             get {
@@ -205,7 +385,34 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ikona.
+        ///   Looks up a localized string similar to Ready meal.
+        /// </summary>
+        internal static string hotovejedlo {
+            get {
+                return ResourceManager.GetString("hotovejedlo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beef.
+        /// </summary>
+        internal static string hovadzie {
+            get {
+                return ResourceManager.GetString("hovadzie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poultry.
+        /// </summary>
+        internal static string hydina {
+            get {
+                return ResourceManager.GetString("hydina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ikon.
         /// </summary>
         internal static string icon {
             get {
@@ -214,7 +421,25 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kategoria.
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string ine {
+            get {
+                return ResourceManager.GetString("ine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information in Web.
+        /// </summary>
+        internal static string informacieweb {
+            get {
+                return ResourceManager.GetString("informacieweb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
         /// </summary>
         internal static string kategoria {
             get {
@@ -223,7 +448,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to licencnecislo.
+        ///   Looks up a localized string similar to Chicken.
+        /// </summary>
+        internal static string kuracie {
+            get {
+                return ResourceManager.GetString("kuracie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Licence number.
         /// </summary>
         internal static string licencnecislo {
             get {
@@ -232,7 +466,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to manual.
+        ///   Looks up a localized string similar to Manual.
         /// </summary>
         internal static string manual {
             get {
@@ -241,7 +475,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to manualnyvyber.
+        ///   Looks up a localized string similar to Manual pull item.
         /// </summary>
         internal static string manualnyvyber {
             get {
@@ -250,7 +484,25 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to musiexistovataspomjedenzaznam.
+        ///   Looks up a localized string similar to Meat product.
+        /// </summary>
+        internal static string masovevyrobky {
+            get {
+                return ResourceManager.GetString("masovevyrobky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Milk production.
+        /// </summary>
+        internal static string mliecnevyrobky {
+            get {
+                return ResourceManager.GetString("mliecnevyrobky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must by one item.
         /// </summary>
         internal static string musiexistovataspomjedenzaznam {
             get {
@@ -259,7 +511,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to naozajchcetevymazatzaznam.
+        ///   Looks up a localized string similar to Found item.
+        /// </summary>
+        internal static string najdena_polozka {
+            get {
+                return ResourceManager.GetString("najdena_polozka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Realy delete item?.
         /// </summary>
         internal static string naozajchcetevymazatzaznam {
             get {
@@ -268,7 +529,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nazov.
+        ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string nazov {
             get {
@@ -277,7 +538,43 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nfcisdissabled.
+        ///   Looks up a localized string similar to License key is not valid.
+        /// </summary>
+        internal static string neplatny_licencny_kluc {
+            get {
+                return ResourceManager.GetString("neplatny_licencny_kluc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TAG is not used.
+        /// </summary>
+        internal static string nepuzivany_tag {
+            get {
+                return ResourceManager.GetString("nepuzivany_tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN not equal.
+        /// </summary>
+        internal static string nespravny_ean {
+            get {
+                return ResourceManager.GetString("nespravny_ean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TAG not equal.
+        /// </summary>
+        internal static string nespravny_tag {
+            get {
+                return ResourceManager.GetString("nespravny_tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NFC is disable.
         /// </summary>
         internal static string nfcisdissabled {
             get {
@@ -286,7 +583,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nfcisnotavailable.
+        ///   Looks up a localized string similar to NFC is not available.
         /// </summary>
         internal static string nfcisnotavailable {
             get {
@@ -295,7 +592,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nie.
+        ///   Looks up a localized string similar to No.
         /// </summary>
         internal static string nie {
             get {
@@ -304,7 +601,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to niejemoznevymazatzaznam.
+        ///   Looks up a localized string similar to No possible delete item.
         /// </summary>
         internal static string niejemoznevymazatzaznam {
             get {
@@ -313,7 +610,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to notagfound.
+        ///   Looks up a localized string similar to No TAG found.
         /// </summary>
         internal static string notagfound {
             get {
@@ -322,7 +619,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to novamiestnost.
+        ///   Looks up a localized string similar to New room.
         /// </summary>
         internal static string novamiestnost {
             get {
@@ -331,7 +628,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to novapolozka.
+        ///   Looks up a localized string similar to New item.
         /// </summary>
         internal static string novapolozka {
             get {
@@ -340,7 +637,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to novapozicia.
+        ///   Looks up a localized string similar to New position.
         /// </summary>
         internal static string novapozicia {
             get {
@@ -349,7 +646,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nové zariadenie.
+        ///   Looks up a localized string similar to New device.
         /// </summary>
         internal static string novezariadenie {
             get {
@@ -358,7 +655,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to novytovar.
+        ///   Looks up a localized string similar to New goods item.
         /// </summary>
         internal static string novytovar {
             get {
@@ -367,7 +664,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ok.
+        ///   Looks up a localized string similar to About the freezer.
+        /// </summary>
+        internal static string o_mraznicke {
+            get {
+                return ResourceManager.GetString("o_mraznicke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
         /// </summary>
         internal static string ok {
             get {
@@ -376,7 +682,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to oznam.
+        ///   Looks up a localized string similar to Fruit.
+        /// </summary>
+        internal static string ovocie {
+            get {
+                return ResourceManager.GetString("ovocie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to notification.
         /// </summary>
         internal static string oznam {
             get {
@@ -385,7 +700,61 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Popis.
+        ///   Looks up a localized string similar to Pastries.
+        /// </summary>
+        internal static string pecivo {
+            get {
+                return ResourceManager.GetString("pecivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After expiration: .
+        /// </summary>
+        internal static string po_expiracii {
+            get {
+                return ResourceManager.GetString("po_expiracii", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semi-finished product.
+        /// </summary>
+        internal static string polotovar {
+            get {
+                return ResourceManager.GetString("polotovar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The item has been deleted.
+        /// </summary>
+        internal static string polozka_bola_vymazana {
+            get {
+                return ResourceManager.GetString("polozka_bola_vymazana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The EAN item has been deleted.
+        /// </summary>
+        internal static string polozka_ean_vymazana {
+            get {
+                return ResourceManager.GetString("polozka_ean_vymazana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The TAG item has been deleted.
+        /// </summary>
+        internal static string polozka_tag_vymazana {
+            get {
+                return ResourceManager.GetString("polozka_tag_vymazana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
         /// </summary>
         internal static string popis {
             get {
@@ -394,7 +763,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popispoziciadetail.
+        ///   Looks up a localized string similar to Description position detail.
         /// </summary>
         internal static string popispoziciadetail {
             get {
@@ -403,7 +772,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popispozicialist.
+        ///   Looks up a localized string similar to Position list.
         /// </summary>
         internal static string popispozicialist {
             get {
@@ -412,7 +781,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popispoziciavytvorenie.
+        ///   Looks up a localized string similar to Description position creation.
         /// </summary>
         internal static string popispoziciavytvorenie {
             get {
@@ -421,7 +790,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popistovardetail.
+        ///   Looks up a localized string similar to Description goods detail.
         /// </summary>
         internal static string popistovardetail {
             get {
@@ -430,7 +799,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popistovarvytvorenie.
+        ///   Looks up a localized string similar to Description goods creation.
         /// </summary>
         internal static string popistovarvytvorenie {
             get {
@@ -439,7 +808,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popistovarzoznam.
+        ///   Looks up a localized string similar to Description goods list.
         /// </summary>
         internal static string popistovarzoznam {
             get {
@@ -457,7 +826,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popisvyber.
+        ///   Looks up a localized string similar to Description search.
         /// </summary>
         internal static string popisvyber {
             get {
@@ -466,7 +835,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popiszariadeniedetail.
+        ///   Looks up a localized string similar to List device record detail.
         /// </summary>
         internal static string popiszariadeniedetail {
             get {
@@ -475,7 +844,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popiszariadenievytvorenie.
+        ///   Looks up a localized string similar to Create device record.
         /// </summary>
         internal static string popiszariadenievytvorenie {
             get {
@@ -484,7 +853,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to popiszariadeniezoznam.
+        ///   Looks up a localized string similar to List device record.
         /// </summary>
         internal static string popiszariadeniezoznam {
             get {
@@ -493,7 +862,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to poslednepouzite.
+        ///   Looks up a localized string similar to Last used.
         /// </summary>
         internal static string poslednepouzite {
             get {
@@ -502,7 +871,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pozícia.
+        ///   Looks up a localized string similar to Position.
         /// </summary>
         internal static string pozicia {
             get {
@@ -511,7 +880,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to poznamka.
+        ///   Looks up a localized string similar to Note.
         /// </summary>
         internal static string poznamka {
             get {
@@ -520,7 +889,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prehľad.
+        ///   Looks up a localized string similar to View.
         /// </summary>
         internal static string prehlad {
             get {
@@ -529,7 +898,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prehľad s výberom.
+        ///   Looks up a localized string similar to View with choice.
         /// </summary>
         internal static string prehlad_main {
             get {
@@ -538,7 +907,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to pridat.
+        ///   Looks up a localized string similar to Add.
         /// </summary>
         internal static string pridat {
             get {
@@ -547,7 +916,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to recordcantbenull.
+        ///   Looks up a localized string similar to Record can not by null.
         /// </summary>
         internal static string recordcantbenull {
             get {
@@ -556,7 +925,52 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to suflik.
+        ///   Looks up a localized string similar to Registration successfull.
+        /// </summary>
+        internal static string registracia_prebehla_uspesne {
+            get {
+                return ResourceManager.GetString("registracia_prebehla_uspesne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore.
+        /// </summary>
+        internal static string restore {
+            get {
+                return ResourceManager.GetString("restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fish.
+        /// </summary>
+        internal static string ryby {
+            get {
+                return ResourceManager.GetString("ryby", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN equal.
+        /// </summary>
+        internal static string spravny_ean {
+            get {
+                return ResourceManager.GetString("spravny_ean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TAG equal.
+        /// </summary>
+        internal static string spravny_tag {
+            get {
+                return ResourceManager.GetString("spravny_tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position.
         /// </summary>
         internal static string suflik {
             get {
@@ -565,7 +979,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tag.
+        ///   Looks up a localized string similar to TAG.
         /// </summary>
         internal static string tag {
             get {
@@ -574,7 +988,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tagid.
+        ///   Looks up a localized string similar to Tag is used.
+        /// </summary>
+        internal static string tag_sa_uz_pouziva {
+            get {
+                return ResourceManager.GetString("tag_sa_uz_pouziva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TAG ID.
         /// </summary>
         internal static string tagid {
             get {
@@ -583,7 +1006,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to taginfo.
+        ///   Looks up a localized string similar to TAG Info.
         /// </summary>
         internal static string taginfo {
             get {
@@ -592,7 +1015,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tag sa nepouziva.
+        ///   Looks up a localized string similar to TAG not used.
         /// </summary>
         internal static string tagsanepouziva {
             get {
@@ -601,7 +1024,25 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tovar.
+        ///   Looks up a localized string similar to Attach the phone to EAN.
+        /// </summary>
+        internal static string telefon_ku_ean {
+            get {
+                return ResourceManager.GetString("telefon_ku_ean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attach the phone to TAG.
+        /// </summary>
+        internal static string telefon_ku_tag {
+            get {
+                return ResourceManager.GetString("telefon_ku_tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to the goods.
         /// </summary>
         internal static string tovar {
             get {
@@ -610,7 +1051,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ulozit.
+        ///   Looks up a localized string similar to Save.
         /// </summary>
         internal static string ulozit {
             get {
@@ -619,7 +1060,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to unsupportedtag.
+        ///   Looks up a localized string similar to Unsuported TAG.
         /// </summary>
         internal static string unsupportedtag {
             get {
@@ -628,7 +1069,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to userhascancelnfcsession.
+        ///   Looks up a localized string similar to User cancel sesion.
         /// </summary>
         internal static string userhascancelnfcsession {
             get {
@@ -637,7 +1078,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to uvodnastranka.
+        ///   Looks up a localized string similar to Introduction.
+        /// </summary>
+        internal static string uvod {
+            get {
+                return ResourceManager.GetString("uvod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home page.
         /// </summary>
         internal static string uvodnastranka {
             get {
@@ -646,7 +1096,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.1.1.
+        ///   Looks up a localized string similar to This application will allow you to check what, where and how long you have stored in the freezer..
+        /// </summary>
+        internal static string uvodnastranka_text {
+            get {
+                return ResourceManager.GetString("uvodnastranka_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version .
         /// </summary>
         internal static string verzia {
             get {
@@ -655,7 +1114,25 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vloženie.
+        ///   Looks up a localized string similar to 1.7.
+        /// </summary>
+        internal static string verzia_cislo {
+            get {
+                return ResourceManager.GetString("verzia_cislo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stored:.
+        /// </summary>
+        internal static string vlozene {
+            get {
+                return ResourceManager.GetString("vlozene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Push.
         /// </summary>
         internal static string vlozenie {
             get {
@@ -664,7 +1141,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to vlozeniemanualne.
+        ///   Looks up a localized string similar to The insertion was successful.
+        /// </summary>
+        internal static string vlozenie_prebehlo_uspesne {
+            get {
+                return ResourceManager.GetString("vlozenie_prebehlo_uspesne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Push manually.
         /// </summary>
         internal static string vlozeniemanualne {
             get {
@@ -673,7 +1159,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to vlozeniepomocouean.
+        ///   Looks up a localized string similar to Push by EAN.
         /// </summary>
         internal static string vlozeniepomocouean {
             get {
@@ -682,16 +1168,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to vlozeniepomocoutagu.
+        ///   Looks up a localized string similar to Push by TAG.
         /// </summary>
-        internal static string vlozeniepomocoutagu {
+        internal static string vlozeniepomocoutag {
             get {
-                return ResourceManager.GetString("vlozeniepomocoutagu", resourceCulture);
+                return ResourceManager.GetString("vlozeniepomocoutag", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Výber.
+        ///   Looks up a localized string similar to Pull.
         /// </summary>
         internal static string vyber {
             get {
@@ -700,7 +1186,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hľadanie s výberom.
+        ///   Looks up a localized string similar to Pull.
         /// </summary>
         internal static string vyber_main {
             get {
@@ -709,7 +1195,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to vyberpomocouean.
+        ///   Looks up a localized string similar to Pull by EAN.
         /// </summary>
         internal static string vyberpomocouean {
             get {
@@ -718,16 +1204,34 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to vyberpomocoutagu.
+        ///   Looks up a localized string similar to Pull by TAG.
         /// </summary>
-        internal static string vyberpomocoutagu {
+        internal static string vyberpomocoutag {
             get {
-                return ResourceManager.GetString("vyberpomocoutagu", resourceCulture);
+                return ResourceManager.GetString("vyberpomocoutag", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to vymazaniezaznamu.
+        ///   Looks up a localized string similar to Select goods - all.
+        /// </summary>
+        internal static string vyberte_tovar_vsetko {
+            get {
+                return ResourceManager.GetString("vyberte_tovar_vsetko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select device - all .
+        /// </summary>
+        internal static string vyberte_zariadenia_vsetky {
+            get {
+                return ResourceManager.GetString("vyberte_zariadenia_vsetky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete record.
         /// </summary>
         internal static string vymazaniezaznamu {
             get {
@@ -736,7 +1240,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to writingtagisnotsupportedonthisdevice.
+        ///   Looks up a localized string similar to Writing tag is not supported on this device.
         /// </summary>
         internal static string writingtagisnotsupportedonthisdevice {
             get {
@@ -745,7 +1249,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to writingtagoperationsuccessful.
+        ///   Looks up a localized string similar to Writing tag operation successful.
         /// </summary>
         internal static string writingtagoperationsuccessful {
             get {
@@ -754,7 +1258,34 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zadajteexpiraciu.
+        ///   Looks up a localized string similar to Enter section of text mandatory.
+        /// </summary>
+        internal static string zadajte_opis_popisu {
+            get {
+                return ResourceManager.GetString("zadajte_opis_popisu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a description.
+        /// </summary>
+        internal static string zadajte_popis {
+            get {
+                return ResourceManager.GetString("zadajte_popis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a note.
+        /// </summary>
+        internal static string zadajte_poznamku {
+            get {
+                return ResourceManager.GetString("zadajte_poznamku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter  Date Of Expiration.
         /// </summary>
         internal static string zadajteexpiraciu {
             get {
@@ -763,7 +1294,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zadajtehmotnost.
+        ///   Looks up a localized string similar to Enter weight.
         /// </summary>
         internal static string zadajtehmotnost {
             get {
@@ -772,7 +1303,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zadajtelicencnecislo.
+        ///   Looks up a localized string similar to Enter licence number.
         /// </summary>
         internal static string zadajtelicencnecislo {
             get {
@@ -781,7 +1312,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zadajtenazov.
+        ///   Looks up a localized string similar to Enter name.
         /// </summary>
         internal static string zadajtenazov {
             get {
@@ -790,7 +1321,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tento údaj je povinný.
+        ///   Looks up a localized string similar to This information is mandatory.
         /// </summary>
         internal static string zadajtepopis {
             get {
@@ -799,7 +1330,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zadajtepoznamku.
+        ///   Looks up a localized string similar to Enter note.
         /// </summary>
         internal static string zadajtepoznamku {
             get {
@@ -808,7 +1339,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zapisnatag.
+        ///   Looks up a localized string similar to Writing to TAG.
         /// </summary>
         internal static string zapisnatag {
             get {
@@ -817,7 +1348,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zariadenie.
+        ///   Looks up a localized string similar to Device.
         /// </summary>
         internal static string zariadenie {
             get {
@@ -826,16 +1357,25 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zaznamexistuje.
+        ///   Looks up a localized string similar to Device not exist.
         /// </summary>
-        internal static string zaznamexistuje {
+        internal static string zaznamneexistuje {
             get {
-                return ResourceManager.GetString("zaznamexistuje", resourceCulture);
+                return ResourceManager.GetString("zaznamneexistuje", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zmazat.
+        ///   Looks up a localized string similar to vegetables.
+        /// </summary>
+        internal static string zelenina {
+            get {
+                return ResourceManager.GetString("zelenina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         internal static string zmazat {
             get {
@@ -844,7 +1384,16 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zoznam položiek.
+        ///   Looks up a localized string similar to Rooms list.
+        /// </summary>
+        internal static string zoznammiestnosti {
+            get {
+                return ResourceManager.GetString("zoznammiestnosti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item list.
         /// </summary>
         internal static string zoznampoloziek {
             get {
@@ -853,7 +1402,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zoznam pozícií.
+        ///   Looks up a localized string similar to Positons list.
         /// </summary>
         internal static string zoznampozicii {
             get {
@@ -862,7 +1411,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zoznam kategórií.
+        ///   Looks up a localized string similar to Category list.
         /// </summary>
         internal static string zoznamtovarov {
             get {
@@ -871,7 +1420,7 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zoznam zariadení.
+        ///   Looks up a localized string similar to Device list.
         /// </summary>
         internal static string zoznamzariadeni {
             get {
@@ -880,11 +1429,20 @@ namespace Mraznicka.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to zrusit.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string zrusit {
             get {
                 return ResourceManager.GetString("zrusit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Venison.
+        /// </summary>
+        internal static string zverina {
+            get {
+                return ResourceManager.GetString("zverina", resourceCulture);
             }
         }
     }

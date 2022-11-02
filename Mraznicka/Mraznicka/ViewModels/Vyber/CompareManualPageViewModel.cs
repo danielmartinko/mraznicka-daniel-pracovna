@@ -78,6 +78,9 @@ namespace Mraznicka.ViewModels.Vyber
             if (answer)
             {
                 DataStore.DeleteItem(Item.Id);
+                DMToast dt = new DMToast();
+                dt.ToastMessage(Mraznicka.Resources.AppResources.polozka_bola_vymazana);
+
                 await Shell.Current.Navigation.PopToRootAsync();
                 //await Shell.Current.GoToAsync("PreviewPage");
             }

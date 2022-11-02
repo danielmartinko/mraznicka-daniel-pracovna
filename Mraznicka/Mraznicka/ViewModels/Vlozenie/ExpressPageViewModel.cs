@@ -111,14 +111,14 @@ namespace Mraznicka.ViewModels.Vlozenie
                 if (!CrossNFC.Current.IsAvailable)
                 {
                     //await ShowAlert(Mraznicka.Resources.AppResources.nfcisnotavailable);
-                    contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisnotavailable, "Zrusit");
+                    contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisnotavailable, Mraznicka.Resources.AppResources.zrusit);
                 }
 
 
                 NfcIsEnabled = CrossNFC.Current.IsEnabled;
                 if (!NfcIsEnabled)
                 {
-                    contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisdissabled, "Zrusit");
+                    contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisdissabled, Mraznicka.Resources.AppResources.zrusit);
                 }
 
 
@@ -158,18 +158,18 @@ namespace Mraznicka.ViewModels.Vlozenie
                     //TODO:
                     Item = new Models.Polozka();
 
-                    await contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.writingtagoperationsuccessful, "Zrusit");
+                    await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.writingtagoperationsuccessful, Mraznicka.Resources.AppResources.zrusit);
                     await Shell.Current.GoToAsync("..");
                 }
                 else
                 {
-                    await contentPage.DisplayAlert("Chytra Mraznicka", "Dany tag uz je v databaze", "Zrusit");
+                    await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, "Dany tag uz je v databaze", Mraznicka.Resources.AppResources.zrusit);
                 }
 
             }
             catch (Exception ex)
             {
-                await contentPage.DisplayAlert("Chytra Mraznicka", ex.Message, "Zrusit");
+                await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, ex.Message, Mraznicka.Resources.AppResources.zrusit);
             }
         }
 
@@ -210,7 +210,7 @@ namespace Mraznicka.ViewModels.Vlozenie
         async void Current_OnNfcStatusChanged(bool isEnabled)
         {
             NfcIsEnabled = isEnabled;
-            await contentPage.DisplayAlert("Chytra Mraznicka", $"NFC has been {(isEnabled ? "enabled" : "disabled")}", "Zrusit");
+            await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, $"NFC has been {(isEnabled ? "enabled" : "disabled")}", Mraznicka.Resources.AppResources.zrusit);
         }
 
 
@@ -232,7 +232,7 @@ namespace Mraznicka.ViewModels.Vlozenie
 
             if (!CrossNFC.Current.IsWritingTagSupported)
             {
-                await contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.writingtagisnotsupportedonthisdevice, "Zrusit");
+                await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.writingtagisnotsupportedonthisdevice, Mraznicka.Resources.AppResources.zrusit);
                 return;
             }
 
@@ -261,7 +261,7 @@ namespace Mraznicka.ViewModels.Vlozenie
             {
                 Debug.WriteLine(ex.Message);
 
-                await contentPage.DisplayAlert("Chytra Mraznicka", ex.Message, "Zrusit");
+                await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, ex.Message, Mraznicka.Resources.AppResources.zrusit);
 
                 //if (ex.HResult != -2146233088)
                 //{

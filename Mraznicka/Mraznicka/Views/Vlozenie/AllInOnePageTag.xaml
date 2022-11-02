@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="Mraznicka.Views.Vlozenie.AllInOnePageTag"
 			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
-			 Title="Vloženie pomocou Tagu">
+			 Title="{i18n:Translate vlozeniepomocoutag}">
 
     <RelativeLayout>
         <!--<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>-->
@@ -21,8 +21,8 @@
                 <StackLayout Margin="20,0,20,100" IsVisible="{Binding InsertByTag, Mode=TwoWay}">
                     <Image  HorizontalOptions="Center" Source="nfc.png" Opacity="0.8" Margin="0,50,0,0" HeightRequest="145" Aspect="AspectFill" ></Image>
                 </StackLayout>
-                <Label Text="{Binding Item.TagID, StringFormat='ID/EAN: {0}'}" TextColor="LightGray"  />
-                <Label Text="Priložte telefón ku TAG-u" FontSize="22" TextColor="Black"  />
+                <!--<Label Text="{Binding Item.TagID, StringFormat='ID/EAN: {0}'}" TextColor="LightGray"  />-->
+                <Label Text="{i18n:Translate telefon_ku_tag}" FontSize="22" TextColor="Black"  />
                 <!--<Button Text="{i18n:Translate ulozit}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>-->
             </StackLayout>
         </ScrollView>

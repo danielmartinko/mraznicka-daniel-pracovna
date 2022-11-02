@@ -17,8 +17,7 @@ namespace Mraznicka.Views.Polozka
 
 		protected override void OnAppearing()
 		{
-			base.OnAppearing();
-		
+			base.OnAppearing();		
 		}
 	}
 }

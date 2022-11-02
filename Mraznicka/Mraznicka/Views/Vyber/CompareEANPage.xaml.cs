@@ -26,12 +26,14 @@ namespace Mraznicka.Views.Vyber
 
 		public void Handle_OnScanResult(Result result)
 		{
+
 			Device.BeginInvokeOnMainThread(async () =>
 			{
 
 				//var duration = TimeSpan.FromSeconds(1);
 				//Vibration.Vibrate(duration);
 
+				/*
 				ISimpleAudioPlayer _simpleAudioPlayer;
 				_simpleAudioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
 				System.IO.Stream beepStream = GetType().Assembly.GetManifestResourceStream("Mraznicka.beep-02.mp3");
@@ -46,24 +48,26 @@ namespace Mraznicka.Views.Vyber
 				{
 					// Feature not supported on device
 				}
-
-				//await DisplayAlert("Scanned result", result.Text, "OK");
+				*/
+				//DisplayAlert("Scanned result", result.Text, "OK");
 				this.ctx.Compare(result.Text);
+
 			});
+			
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-
-			_scanView.IsScanning = true;
+			ctx.OnAppearing();
+			//_scanView.IsScanning = true;
 		}
 
 		protected override void OnDisappearing()
 		{
 			base.OnDisappearing();
 
-			_scanView.IsScanning = false;
+			//_scanView.IsScanning = false;
 		}
 	}
 }

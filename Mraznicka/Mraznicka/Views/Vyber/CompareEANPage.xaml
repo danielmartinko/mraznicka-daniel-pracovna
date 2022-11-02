@@ -9,7 +9,8 @@
 			 xmlns:converters="clr-namespace:Mraznicka.ValueConverters"
              xmlns:local="clr-namespace:Mraznicka.ViewModels.Vyber"  
 			 xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
-			 Title="{i18n:Translate vyberpomocouean}">
+             x:DataType="local:CompareEANPageViewModel"
+             Title="{i18n:Translate vyberpomocouean}">
 
 
     <ContentPage.Resources>
@@ -18,99 +19,87 @@
         <converters:PoziciaConverter x:Key="poziciaConverter" />
         <converters:TovarConverter x:Key="tovarConverter" />
         <converters:DateConverter x:Key="dateConverter" />
-		<converters:ExpiraciaConverter x:Key="expiraciaConverter" />
-		<converters:TovarToImageConverter x:Key="tovarToImageConverter" />
-
+        <converters:DayConverter x:Key="dayConverter" />
+        <converters:ExpiraciaConverter x:Key="expiraciaConverter" />
+        <converters:TovarToImageConverter x:Key="tovarToImageConverter" />
     </ContentPage.Resources>
 
     <RelativeLayout>
-        <!--<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
-
-        <RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
-            <Label Style="{StaticResource Note}" Text="Zoznam miestností s chladničkou, mrazničkou Vám ponúka prehladný zoznam spolu s obsadenostou daného zariadenia. Takto prehladne vidíte kolko miesta máte ešte volného."></Label>
-        </RelativeLayout>-->
-
-        <!--<ScrollView Margin="20,20,20,20" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">-->
-        <!--<ScrollView Style="{StaticResource MainSroll}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">-->
-            <ScrollView Margin="20,0,20,130" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
-                <StackLayout>
+            <ScrollView Margin="20,0,20,100" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                <StackLayout Margin="10,0,0,200">
                 <zxing:ZXingScannerView  x:Name="_scanView" OnScanResult="Handle_OnScanResult" IsScanning="true" HeightRequest="100"  />
-                <Label Text="{Binding Item.TagID, StringFormat='EAN: {0}'}" TextColor="Tomato"  />
-                <Label Text="Priložte telefón ku EAN-u" FontSize="22" TextColor="Black"  />
+                <Label Text="{i18n:Translate telefon_ku_ean}" FontSize="18" TextColor="Black"  HorizontalOptions="CenterAndExpand"/>
 
-                <StackLayout>
-                    <Label Style="{DynamicResource Header}">Hladaná položka</Label>
-                    <!--<StackLayout Orientation="Vertical" Margin="0,0,0,0">
-                        <Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
-                        <Label Text="{Binding Item.Popis}" FontSize="16" TextColor="Black"  />
+                <StackLayout >
+                    <Label Text="{i18n:Translate hladana_polozka}" FontSize ="20" Style="{DynamicResource Header}" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Item.TagID, StringFormat='EAN: {0}'}" TextColor="Blue" FontSize="18" HorizontalOptions="CenterAndExpand"/>
+                    <StackLayout Padding="10,-30,0,0" Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
+
+						<StackLayout Orientation="Vertical" WidthRequest="100">
+							<ImageButton Source="{Binding Item.Tovar, Converter={StaticResource tovarToImageConverter}}"  Margin="0,0,20,0" VerticalOptions="CenterAndExpand">
+                            </ImageButton>
+						</StackLayout>
+
+                        <StackLayout>
+                            <Label Text="{Binding Item.Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Style="{DynamicResource FrameOrange}" BackgroundColor="{Binding Item, Converter={StaticResource expiraciaConverter}}" BorderColor="{Binding TagItem, Converter={StaticResource expiraciaConverter}}">
+                                    <Label Text="{Binding Item.Expiracia, StringFormat='{0}', Converter={StaticResource dayConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{i18n:Translate vlozene}" 
+                                       Style="{DynamicResource KeyLabel}" 
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Item.DatumVytvorenia, StringFormat=': {0}' , Converter={StaticResource dateConverter}}" 
+                                       Style="{DynamicResource KeyLabel}" 
+                                       TextColor="Black"/>
+                            </StackLayout>
+                        </StackLayout>
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
-                        <Label Text="TagID:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
-                        <Label Text="{Binding Item.TagID}" FontSize="16" TextColor="Black"  />
-                    </StackLayout>-->
+                    <Label x:Name="text_najdena_polozka" FontSize ="20" Style="{DynamicResource Header}" Text="{i18n:Translate najdena_polozka}" HorizontalOptions="CenterAndExpand" />
+                    <Label x:Name="text_ean" Text="{Binding Item.TagIDPrecitany, StringFormat='EAN: {0}'}" TextColor="Tomato" FontSize="18" HorizontalOptions="CenterAndExpand" />
 
-					<StackLayout Padding="0,0,0,0"  Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
+                    <StackLayout Padding="10,-30,0,0" Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
 
-						<StackLayout Orientation="Vertical" WidthRequest="80">
-							<ImageButton Source="{Binding Item.Tovar, Converter={StaticResource tovarToImageConverter}}"  Margin="0,0,20,0" VerticalOptions="CenterAndExpand"></ImageButton>
-						</StackLayout>
+                        <StackLayout Orientation="Vertical" WidthRequest="100">
+                            <Label x:Name="vyber" Text="{i18n:Translate vyber}" TextColor="Black" Margin="10,15,0,0" Padding="0,0,0,0"/>
+                            <ImageButton x:Name="image_tovar" Source="{Binding TagItem.Tovar, Converter={StaticResource tovarToImageConverter}}"  
+                                 Command="{Binding ItemPull}" CommandParameter="{Binding TagItem}" 
+                                 Margin="0,0,20,0" VerticalOptions="CenterAndExpand">
+                            </ImageButton>
+                        </StackLayout>
 
-						<StackLayout>
-							<StackLayout.GestureRecognizers>
-								<!--<TapGestureRecognizer Command="{Binding ItemTapped}" CommandParameter="{Binding Item}"/>-->
-
-							</StackLayout.GestureRecognizers>
-							<Label Text="{Binding Item.Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
-							<StackLayout Orientation="Horizontal">
-								<Frame Style="{DynamicResource FrameOrange}" BackgroundColor="{Binding Item, Converter={StaticResource expiraciaConverter}}" BorderColor="{Binding Item, Converter={StaticResource expiraciaConverter}}">
-									<Label Text="{Binding Item.Expiracia, StringFormat='Expiracia: {0}', Converter={StaticResource dateConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
-								</Frame>
-							</StackLayout>
-							<Label Text="{Binding Item.DatumVytvorenia, StringFormat='Vlozene: {0}',  Converter={StaticResource dateConverter}}" Style="{DynamicResource FrameLabel}" />
-						</StackLayout>
-					</StackLayout>
-
-					<Label Style="{DynamicResource Header}" Margin="0,20,0,0">Najdená položka</Label>
-                    <!--<StackLayout Orientation="Vertical" Margin="0,0,0,0">
-                        <Label Text="Popis:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
-                        <Label x:Name="TagPopis" Text="{Binding TagItem.Popis}" FontSize="25" TextColor="Black"  />
+                        <StackLayout>
+                            <Label Text="{Binding TagItem.Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Style="{DynamicResource FrameOrange}" BackgroundColor="{Binding TagItem, Converter={StaticResource expiraciaConverter}}" BorderColor="{Binding TagItem, Converter={StaticResource expiraciaConverter}}">
+                                    <Label Text="{Binding TagItem.Expiracia, StringFormat='{0}', Converter={StaticResource dayConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="label_najdena_vlozene" Text="{i18n:Translate vlozene}" 
+                                       Style="{DynamicResource KeyLabel}" 
+                                       TextColor="Black"/>
+                                <Label x:Name="label_najdena_datum_vytvorenia" Text="{Binding Item.DatumVytvorenia, StringFormat=': {0}' , Converter={StaticResource dateConverter}}" 
+                                       Style="{DynamicResource KeyLabel}" 
+                                       TextColor="Black"/>
+                            </StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ItemPull}" CommandParameter="{Binding TagItem}"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
                     </StackLayout>
-
-                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
-                        <Label Text="TagID:" FontSize="16" TextColor="Black" FontAttributes="Bold" />
-                        <Label Text="{Binding TagItem.TagID}" FontSize="16" TextColor="Black"  />
-                    </StackLayout>-->
-
-					<StackLayout Padding="0,0,0,0"  Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
-
-						<StackLayout Orientation="Vertical" WidthRequest="80">
-							<ImageButton Source="{Binding TagItem.Tovar, Converter={StaticResource tovarToImageConverter}}"  Margin="0,0,20,0" VerticalOptions="CenterAndExpand"></ImageButton>
-						</StackLayout>
-
-						<StackLayout>
-							<StackLayout.GestureRecognizers>
-								<!--<TapGestureRecognizer Command="{Binding ItemTapped}" CommandParameter="{Binding Item}"/>-->
-
-							</StackLayout.GestureRecognizers>
-							<Label Text="{Binding TagItem.Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
-							<StackLayout Orientation="Horizontal">
-								<Frame Style="{DynamicResource FrameOrange}" BackgroundColor="{Binding TagItem, Converter={StaticResource expiraciaConverter}}" BorderColor="{Binding TagItem, Converter={StaticResource expiraciaConverter}}">
-									<Label Text="{Binding TagItem.Expiracia, StringFormat='Expiracia: {0}', Converter={StaticResource dateConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
-								</Frame>
-							</StackLayout>
-							<Label Text="{Binding TagItem.DatumVytvorenia, StringFormat='Vlozene: {0}',  Converter={StaticResource dateConverter}}" Style="{DynamicResource FrameLabel}" />
-						</StackLayout>
-					</StackLayout>
-
-					<Button x:Name="btnSubmit" Text="Výber" Image="ikona_vybrat50x50" Command="{Binding VyberCommand}" Margin="0,20,0,0" HorizontalOptions="FillAndExpand"></Button>
-
                 </StackLayout>
 
             </StackLayout>
         </ScrollView>
-        <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-60}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
-            <Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
+        <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-80}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+            <StackLayout>
+                <Button x:Name="btnSubmit" Text="{i18n:Translate vyber}" Image="ikona_vybrat50x50" ContentLayout="Left,20" Command="{Binding VyberCommand}" Margin="0,-50,0,0" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+            <!--<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>-->
         </RelativeLayout>
     </RelativeLayout>
 </ContentPage>

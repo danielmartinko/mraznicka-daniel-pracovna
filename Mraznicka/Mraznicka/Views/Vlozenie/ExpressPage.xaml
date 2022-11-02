@@ -21,7 +21,7 @@
                 <StackLayout>
                     <zxing:ZXingScannerView  x:Name="_scanView" OnScanResult="Handle_OnScanResult" IsScanning="true" HeightRequest="100"  />
                     <Label Text="{Binding Item.TagID, StringFormat='Tag/EAN: {0}'}" TextColor="LightGray"  />
-                    <Label Text="Priložte telefón ku TAG-u" FontSize="22" TextColor="Black"  />
+                    <Label Text="Priložte telefón k TAG-u" FontSize="22" TextColor="Black"  />
 
                 </StackLayout>
 

@@ -88,14 +88,14 @@ namespace Mraznicka.ViewModels.Vyber
 				if (!CrossNFC.Current.IsAvailable)
 				{
 					//await ShowAlert(Mraznicka.Resources.AppResources.nfcisnotavailable);
-					contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisnotavailable, "Zrusit");
+					contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisnotavailable, Mraznicka.Resources.AppResources.zrusit);
 				}
 
 
 				NfcIsEnabled = CrossNFC.Current.IsEnabled;
 				if (!NfcIsEnabled)
 				{
-					contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisdissabled, "Zrusit");
+					contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisdissabled, Mraznicka.Resources.AppResources.zrusit);
 				}
 
 
@@ -125,7 +125,9 @@ namespace Mraznicka.ViewModels.Vyber
 				if (answer)
 				{
 					DataStore.DeleteItem(item.Id);
-					Shell.Current.GoToAsync("..");
+                    DMToast dt = new DMToast();
+                    dt.ToastSuccess(Mraznicka.Resources.AppResources.polozka_ean_vymazana);
+                    await Shell.Current.GoToAsync("..");
 				}
 			}
 			
@@ -211,7 +213,7 @@ namespace Mraznicka.ViewModels.Vyber
 		async void Current_OnNfcStatusChanged(bool isEnabled)
 		{
 			NfcIsEnabled = isEnabled;
-			await contentPage.DisplayAlert("Chytra Mraznicka", $"NFC has been {(isEnabled ? "enabled" : "disabled")}", "Zrusit");
+			await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, $"NFC has been {(isEnabled ? "enabled" : "disabled")}", Mraznicka.Resources.AppResources.zrusit);
 		}
 
 

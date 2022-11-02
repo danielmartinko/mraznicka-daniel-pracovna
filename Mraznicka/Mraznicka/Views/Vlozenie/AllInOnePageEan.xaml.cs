@@ -12,6 +12,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing;
+using Plugin.Toast;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace Mraznicka.Views.Vlozenie
 {
@@ -42,18 +44,33 @@ namespace Mraznicka.Views.Vlozenie
             return !String.IsNullOrWhiteSpace(Item.TagID);
         }
 
-        private void OnSave()
+        private async void OnSave()
         {
             DataStore.AddItem(Item);
             // This will pop the current page off the navigation stack
             //await Shell.Current.GoToAsync("MainPage");
+            await Shell.Current.Navigation.PopToRootAsync();
 
             MainThread.BeginInvokeOnMainThread(() =>
             {
+                try
+                {
+                    //CrossToastPopUp.Current.ShowToastSuccess(Mraznicka.Resources.AppResources.vlozenie_prebehlo_uspesne);
+                    DMToast dt = new DMToast();
+                    dt.ToastSuccess(Mraznicka.Resources.AppResources.vlozenie_prebehlo_uspesne);
+                }
+                catch (Exception ex)
+                {
+
+                }
+                // Shell.Current.GoToAsync("VlozenieAllInOnePage");
+                // Shell.Current.Navigation.PopToRootAsync();
+                /*
                 DisplayAlert("Chytrá Mraznička", "Zápis prebehol úspešne", "Ok").ContinueWith(t =>
                 {
                     Shell.Current.Navigation.PopToRootAsync();
                 });
+                */
             });
         }
 

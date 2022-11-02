@@ -19,6 +19,7 @@ namespace Mraznicka.Models
         private int tovar;
         private int typ;
         private string tagID = "";
+        private string tagIDPrecitany = "";
         private string popis;
         private DateTime expiracia;
         private DateTime datumvytvorenia;
@@ -52,7 +53,13 @@ namespace Mraznicka.Models
             get { return tagID; }
             set { SetAndNotify(ref tagID, value, () => TagID); }
         }
- 
+
+        public string TagIDPrecitany
+        {
+            get { return tagIDPrecitany; }
+            set { SetAndNotify(ref tagIDPrecitany, value, () => TagIDPrecitany); }
+        }
+
         public string Popis
         {
             get { return popis; }

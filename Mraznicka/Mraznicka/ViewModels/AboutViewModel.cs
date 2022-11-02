@@ -11,7 +11,6 @@ namespace Mraznicka.ViewModels
 	{
 		public AboutViewModel()
 		{
-			Title = "O mrazničke";
 			OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://chytramraznicka.sk/"));
 		}
 

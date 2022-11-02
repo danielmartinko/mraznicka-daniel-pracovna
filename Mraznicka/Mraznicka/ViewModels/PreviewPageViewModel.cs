@@ -61,14 +61,14 @@ namespace Mraznicka.ViewModels
             AddItemCommand = new Command(OnAddItem);
 
             Tovary.Clear();
-            Tovary.Add(new Models.Tovar() { Id = -1, Nazov = "Vyberte tovar - všetko" });
+            Tovary.Add(new Models.Tovar() { Id = -1, Nazov = Resources.AppResources.vyberte_tovar_vsetko });
             foreach (var item in TovarDataStore.GetItems(true))
             {
                 Tovary.Add(item);
             }
 
             Zariadenia.Clear();
-            Zariadenia.Add(new Models.Zariadenie() { Id = -1, Nazov = "Vyberte zariadenie - všetky" });
+            Zariadenia.Add(new Models.Zariadenie() { Id = -1, Nazov = Resources.AppResources.vyberte_zariadenia_vsetky });
             foreach (var item in ZariadenieDataStore.GetItems(true))
             {
                 Zariadenia.Add(item);

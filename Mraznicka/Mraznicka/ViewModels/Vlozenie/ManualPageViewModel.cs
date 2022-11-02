@@ -32,7 +32,6 @@ namespace Mraznicka.ViewModels.Vlozenie
 			Item.Zariadenie = pp.Zariadenie;
 			Item.Typ = 3;
 			Item.DatumVytvorenia = DateTime.Now;
-
 		}
 
 		private bool ValidateSave()

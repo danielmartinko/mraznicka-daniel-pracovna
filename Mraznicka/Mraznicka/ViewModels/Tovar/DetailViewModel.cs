@@ -89,13 +89,15 @@ namespace Mraznicka.ViewModels.Tovar
                 //if (answer)
                 //{
                     DataStore.DeleteItem(Item.Id);
-                    // This will pop the current page off the navigation stack
-                    Shell.Current.GoToAsync("..");
+                DMToast dt = new DMToast();
+                dt.ToastMessage(Mraznicka.Resources.AppResources.polozka_bola_vymazana);
+                // This will pop the current page off the navigation stack
+                await Shell.Current.GoToAsync("..");
                 //}
             }
             else
             {
-                contentPage.DisplayAlert(Resources.AppResources.niejemoznevymazatzaznam, Resources.AppResources.musiexistovataspomjedenzaznam, Resources.AppResources.zrusit);
+                await contentPage.DisplayAlert(Resources.AppResources.niejemoznevymazatzaznam, Resources.AppResources.musiexistovataspomjedenzaznam, Resources.AppResources.zrusit);
             }
         }
 

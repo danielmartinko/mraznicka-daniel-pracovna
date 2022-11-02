@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"             
+             x:Class="Mraznicka.Views.FactoryPage"
+             xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
+             Title="{i18n:Translate factory_settings_title}">
+
+    <RelativeLayout>
+        <ScrollView Margin="0,0,0,80" Padding="20"  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+            <StackLayout>
+                <StackLayout Orientation="Vertical" Margin="0,20,0,0">
+                    <Button Text="{i18n:Translate restore}" Image="icon_about.png" ContentLayout="Left,20" Command="{Binding RestoreCommand}" HorizontalOptions="FillAndExpand" Margin="0"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <RelativeLayout  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-110}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
+            <StackLayout>
+                <Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFit" ></Image>
+            </StackLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ContentPage>

@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Plugin.Toast;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace Mraznicka.ViewModels.Vyber
 {
     public class EANCodePageViewModel : BaseViewModel
     {
+        private Button btnSubmit;
+        private Label lNajdenaPolozka;
+        public Command VyberCommand { get; }
+
         public Command<Models.Polozka> ItemTapped { get; }
         public Command<Models.Polozka> ItemPull { get; }
 
@@ -27,10 +33,20 @@ namespace Mraznicka.ViewModels.Vyber
             Items = new ObservableCollection<Models.Polozka>();
             ItemTapped = new Command<Models.Polozka>(OnItemSelected);
             ItemPull = new Command<Models.Polozka>(OnItemPull);
+            VyberCommand = new Command(OnVyber, ValidateVyber);
+            btnSubmit = contentPage.FindByName<Button>("btnSubmit");
+            lNajdenaPolozka = contentPage.FindByName<Label>("najdena_polozka");
+            btnSubmit.IsVisible = false;
+            lNajdenaPolozka.IsVisible = false;
+        }
+
+        private bool ValidateVyber()
+        {
+            return true;
         }
 
 
-        public async void ExecuteLoadItemsCommand(string ean)
+        public void ExecuteLoadItemsCommand(string ean)
         {
             IsBusy = true;
 
@@ -52,8 +68,29 @@ namespace Mraznicka.ViewModels.Vyber
                 IsBusy = false;
             }
 
+            lNajdenaPolozka.IsVisible = true;
             if (Items.Count == 0)
-                await contentPage.DisplayAlert(Resources.AppResources.oznam, Resources.AppResources.eansanepouziva, Resources.AppResources.ok);
+            {
+                //CrossToastPopUp.Current.ShowToastError(Resources.AppResources.eansanepouziva);
+                DMToast dt = new DMToast();
+                dt.ToastError(Mraznicka.Resources.AppResources.eansanepouziva);
+
+                /*
+                contentPage.DisplayAlert(Resources.AppResources.oznam, Resources.AppResources.eansanepouziva, Resources.AppResources.ok).ContinueWith(t =>
+                {
+                    Shell.Current.Navigation.PopToRootAsync();
+                });
+                */
+            }
+            if (Items.Count == 1)
+            {
+                // btnSubmit.IsVisible = true;
+            }
+            else
+            {
+                btnSubmit.IsVisible = false;
+            }
+            IsBusy = false;
         }
 
         private async void OnPreviewClicked(object obj)
@@ -72,8 +109,15 @@ namespace Mraznicka.ViewModels.Vyber
             bool answer = await contentPage.DisplayAlert(Resources.AppResources.vymazaniezaznamu, Resources.AppResources.naozajchcetevymazatzaznam, Resources.AppResources.ano, Resources.AppResources.nie);
             if (answer)
             {
-                DataStore.DeleteItem(item.Id);
-                Shell.Current.GoToAsync("..");
+                //CrossToastPopUp.Current.ShowToastSuccess(Mraznicka.Resources.AppResources.polozka_ean_vymazana, Plugin.Toast.Abstractions.ToastLength.Long);
+                DataStore.DeleteItem(Items[0].Id);
+                DMToast dt = new DMToast();
+                dt.ToastSuccess(Mraznicka.Resources.AppResources.polozka_ean_vymazana);
+                await Shell.Current.GoToAsync("..");
+
+                // DataStore.DeleteItem(item.Id);
+                // ExecuteLoadItemsCommand(item.TagID);
+                // Shell.Current.GoToAsync("..");
             }
 
         }
@@ -85,6 +129,29 @@ namespace Mraznicka.ViewModels.Vyber
 
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"PolozkaDetailPage?{nameof(ViewModels.Polozka.DetailViewModel.ItemId)}={item.Id}");
+        }
+        private async void OnVyber()
+        {
+            if (Items[0] != null)
+            {
+                bool answer = await contentPage.DisplayAlert(Resources.AppResources.vymazaniezaznamu, Resources.AppResources.naozajchcetevymazatzaznam, Resources.AppResources.ano, Resources.AppResources.nie);
+                if (answer)
+                {
+                    //CrossToastPopUp.Current.ShowToastSuccess(Mraznicka.Resources.AppResources.polozka_ean_vymazana, Plugin.Toast.Abstractions.ToastLength.Long);
+                    DataStore.DeleteItem(Items[0].Id);
+                    DMToast dt = new DMToast();
+                    dt.ToastSuccess(Mraznicka.Resources.AppResources.polozka_ean_vymazana);
+                    await Shell.Current.GoToAsync("..");
+                }
+            }
+            else
+            {
+                //CrossToastPopUp.Current.ShowToastSuccess(Resources.AppResources.eansanepouziva, Plugin.Toast.Abstractions.ToastLength.Long);
+                DMToast dt = new DMToast();
+                dt.ToastSuccess(Mraznicka.Resources.AppResources.eansanepouziva);
+
+            }
+            // This will pop the current page off the navigation stack
         }
     }
 }

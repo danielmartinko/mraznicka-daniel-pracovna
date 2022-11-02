@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="sk.qsoft.iqfridge" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
-	<application android:label="Mraznicka.Android" android:theme="@style/MainTheme" android:icon="@mipmap/icon">
-
-	</application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.7" package="sk.qsoft.iqfridge" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
+	<application android:label="Mraznicka.Android" android:theme="@style/MainTheme" android:icon="@mipmap/icon"></application>
 	<!--receiver android:name=".BackgroundReceiver"></receiver-->
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.NFC" />
@@ -11,8 +9,6 @@
 	<uses-permission android:name="android.permission.GET_TASKS" />
 	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 	<uses-permission android:name="android.permission.CAMERA" />
-
-
 	<!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-permission android:name="android.Manifest.permission.READ_PHONE_STATE" />

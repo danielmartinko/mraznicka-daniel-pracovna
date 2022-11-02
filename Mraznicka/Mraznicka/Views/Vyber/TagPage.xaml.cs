@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 /*
@@ -17,21 +17,48 @@ using Xamarin.Forms.Xaml;
 namespace Mraznicka.Views.Vyber
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TagPage : ContentPage, INotifyPropertyChanged
+    [QueryProperty(nameof(TAG_ID), "TAG_ID")]
+    [QueryProperty(nameof(NAME), "Name")]
+    public partial class TagPage : ContentPage, INotifyPropertyChanged
 	{
-		public ViewModels.Vyber.TagPageViewModel ctx { get; set; }
+		string tag_id;
+        public string TAG_ID
+        {
+            set
+            {
+                tag_id = value;
+            }
+			get { return tag_id; }
+        }
+        string Name;
+        public string NAME
+        {
+            set
+            {
+                Name = value;
+            }
+            get { return Name; }
+        }
+        public ViewModels.Vyber.TagPageViewModel ctx { get; set; }
 
 		public TagPage()
 		{
 			InitializeComponent();
 			this.BindingContext = this.ctx = new ViewModels.Vyber.TagPageViewModel(this);
+			
 		}
 
-		protected async override void OnAppearing()
+		protected override void OnAppearing()
 		{
-			this.ctx.SubscribeEvents();
-			CrossNFC.Current.StartListening();
-			//CrossNFC.Current.StartPublishing(true);
+            this.ctx.LoadItem(TAG_ID);
+
+            Task.Run(() => MainThread.BeginInvokeOnMainThread(() =>
+            {
+				this.ctx.SubscribeEvents();
+				CrossNFC.Current.StartListening();
+				CrossNFC.Current.StartPublishing(true);
+			}));
+			
 			base.OnAppearing();
 		}
 
@@ -43,8 +70,8 @@ namespace Mraznicka.Views.Vyber
 		}
 		protected override void OnDisappearing()
 		{
-			((ViewModels.Vyber.TagPageViewModel)this.ctx).UnsubscribeEvents();
-			CrossNFC.Current.StopListening();
+			// ((ViewModels.Vyber.TagPageViewModel)this.ctx).UnsubscribeEvents();
+			// CrossNFC.Current.StopListening();
 			base.OnDisappearing();
 		}
 

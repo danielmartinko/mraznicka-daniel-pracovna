@@ -12,7 +12,10 @@
 
 	<ContentPage.Resources>
 		<converters:TovarToImageConverter x:Key="tovarToImageConverter" />
-	</ContentPage.Resources>
+        <converters:TovarLocalizeConverter x:Key="tovarLocalizeConverter" />
+        <converters:DayConverter x:Key="dayConverter" />
+        <converters:ExpiraciaConverter x:Key="expiraciaConverter" />
+    </ContentPage.Resources>
 
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
@@ -28,67 +31,28 @@
 			<CollectionView  x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
 				<CollectionView.ItemTemplate>
 					<DataTemplate>
-						<StackLayout Padding="20,10,0,0" x:DataType="model:Tovar" Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}">
-							<StackLayout Orientation="Vertical" WidthRequest="80">
-								<ImageButton Source="{Binding Id, Converter={StaticResource tovarToImageConverter}}" Margin="0,0,20,0" VerticalOptions="CenterAndExpand"></ImageButton>
-							</StackLayout>
+                        <StackLayout Padding="20,10,0,0" x:DataType="model:Tovar" Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}">
+                            <StackLayout Orientation="Vertical" WidthRequest="80">
+                                <ImageButton Source="{Binding Id, Converter={StaticResource tovarToImageConverter}}" Margin="0,0,20,0" VerticalOptions="CenterAndExpand"></ImageButton>
+                            </StackLayout>
 
-							<StackLayout>
-								<Label Text="{Binding Nazov}" Style="{DynamicResource Header}" />
-								<StackLayout Orientation="Horizontal">
-									<Frame Style="{DynamicResource FrameOrange}">
-										<Label Text="{Binding Expiracia, StringFormat='Expiracia {0} dní'}"  Style="{DynamicResource FrameLabelWhite}" />
-									</Frame>
-								</StackLayout>
-								<StackLayout.GestureRecognizers>
-									<TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ListViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"></TapGestureRecognizer>
-								</StackLayout.GestureRecognizers>
-							</StackLayout>
-						</StackLayout>
+                            <StackLayout>
+                                <Label Text="{Binding ., Converter={StaticResource tovarLocalizeConverter}}" Style="{DynamicResource Header}" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame Style="{DynamicResource FrameOrange}">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{i18n:Translate expiraciadni}"  Style="{DynamicResource FrameLabelWhite}" FontSize="15"/>
+                                            <Label Text="{Binding Expiracia, StringFormat='{0}'}"  Style="{DynamicResource FrameLabelWhite}" FontSize="15"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
 
-						<!--<StackLayout Padding="20,10,0,0" x:DataType="model:Polozka" Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
-
-							<StackLayout Orientation="Vertical" WidthRequest="80">
-								<ImageButton Source="{Binding Tovar, Converter={StaticResource tovarToImageConverter}}" Margin="0,0,20,0" VerticalOptions="CenterAndExpand" Command="{Binding Source={RelativeSource AncestorType={x:Type local:PreviewPageViewModel}}, Path=ItemPull}" CommandParameter="{Binding .}"></ImageButton>
-							</StackLayout>
-
-
-							<StackLayout>
-								<Label Text="{Binding Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
-								<StackLayout Orientation="Horizontal">
-									-->
-						<!--<Frame Style="{DynamicResource FrameOrange}">
-										<Label Text="{Binding Miestnost, Converter={StaticResource miestnostConverter}}" Style="{DynamicResource FrameLabelWhite}" />
-									</Frame>-->
-						<!--
-									<Frame Style="{DynamicResource FrameOrange}">
-										<Label Text="{Binding Zariadenie, Converter={StaticResource zariadenieConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
-									</Frame>
-									-->
-						<!--<Frame Style="{DynamicResource FrameBlue}">
-                                        <Label Text="{Binding Pozicia, Converter={StaticResource poziciaConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
-                                    </Frame>-->
-						<!--<Frame CornerRadius="10" OutlineColor="{StaticResource Primary}" BackgroundColor="{StaticResource Primary}" Padding="10,2,10,2">
-										<Label Text="{Binding Tovar, Converter={StaticResource tovarConverter}}" LineBreakMode="NoWrap" TextColor="White" FontSize="13" />
-									</Frame>-->
-						<!--
-
-									<Label Text="{Binding Expiracia, StringFormat='Expiracia: {0}', Converter={StaticResource dateConverter}}" Style="{DynamicResource FrameLabel}" />
-								</StackLayout>
-								-->
-						<!--<StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Typ, StringFormat='Vlozene: {0}', Converter={StaticResource insertConverter}}" Style="{DynamicResource FrameLabel}" />
-                                </StackLayout>-->
-						<!--
-
-							</StackLayout>
-
-							<StackLayout.GestureRecognizers>
-								<TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:PreviewPageViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"></TapGestureRecognizer>
-							</StackLayout.GestureRecognizers>
-						</StackLayout>-->
-
-					</DataTemplate>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ListViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
 				</CollectionView.ItemTemplate>
 			</CollectionView>
 		</RefreshView>

@@ -117,280 +117,466 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about" xml:space="preserve">
+    <value>About freezer</value>
+  </data>
+  <data name="about_mysli" xml:space="preserve">
+    <value>       who thinks for you</value>
+  </data>
+  <data name="about_riadok_1" xml:space="preserve">
+    <value>After a simple initial connection, which you can handle yourself, your phone will allow you the following uses and benefits:</value>
+  </data>
+  <data name="about_riadok_2" xml:space="preserve">
+    <value>- Expiry date reminders.</value>
+  </data>
+  <data name="about_riadok_3" xml:space="preserve">
+    <value>- Permanent overview of the contents of the freezer on your phone (anywhere and anytime).</value>
+  </data>
+  <data name="about_riadok_4" xml:space="preserve">
+    <value>- Makes shopping and cooking planning easier.</value>
+  </data>
+  <data name="about_riadok_5" xml:space="preserve">
+    <value>- Quick search for food in the freezer.</value>
+  </data>
+  <data name="about_riadok_6" xml:space="preserve">
+    <value>- You can use all the functions, for example, in the refrigerator or when making preserves.</value>
+  </data>
   <data name="ano" xml:space="preserve">
-    <value>ano</value>
+    <value>Yes</value>
+  </data>
+  <data name="bravcove" xml:space="preserve">
+    <value>Pork</value>
+  </data>
+  <data name="bylinky" xml:space="preserve">
+    <value>Herbs</value>
+  </data>
+  <data name="chytra_mraznicka" xml:space="preserve">
+    <value>Clever freezer</value>
+  </data>
+  <data name="cukrovinky" xml:space="preserve">
+    <value>Sweets</value>
   </data>
   <data name="datumvytvorenia" xml:space="preserve">
-    <value>datumvytvorenia</value>
+    <value>Creation date</value>
+  </data>
+  <data name="den" xml:space="preserve">
+    <value> Day</value>
   </data>
   <data name="detailmiestnosti" xml:space="preserve">
-    <value>detailmiestnosti</value>
+    <value>Room details</value>
   </data>
   <data name="detailpolozky" xml:space="preserve">
-    <value>detailpolozky</value>
+    <value>Item details</value>
   </data>
   <data name="detailpozicie" xml:space="preserve">
-    <value>detailpozicie</value>
+    <value>Position details</value>
   </data>
   <data name="detailtovaru" xml:space="preserve">
-    <value>detailtovaru</value>
+    <value>Goods details</value>
   </data>
   <data name="detailzariadenia" xml:space="preserve">
-    <value>Detailný popis zariadenia</value>
+    <value>Detailed description of the device</value>
+  </data>
+  <data name="dni" xml:space="preserve">
+    <value> Days</value>
+  </data>
+  <data name="dní" xml:space="preserve">
+    <value> Days</value>
+  </data>
+  <data name="do_expiracie" xml:space="preserve">
+    <value>Until expiration: </value>
   </data>
   <data name="ean" xml:space="preserve">
-    <value>ean</value>
+    <value>EAN</value>
   </data>
   <data name="eansanepouziva" xml:space="preserve">
-    <value>ean sa nepouziva</value>
+    <value>EAN is not used</value>
   </data>
   <data name="emptytag" xml:space="preserve">
-    <value>emptytag</value>
+    <value>Empty TAG</value>
   </data>
   <data name="expiracia" xml:space="preserve">
-    <value>Expirácia</value>
+    <value>Expiration</value>
   </data>
   <data name="expiraciadni" xml:space="preserve">
-    <value>expiracia (dni)</value>
+    <value>Expiration (day)</value>
   </data>
-  <data name="expresspull" xml:space="preserve">
-    <value>expresspull</value>
+  <data name="factory_settings" xml:space="preserve">
+    <value>Factory settings</value>
   </data>
-  <data name="expresspush" xml:space="preserve">
-    <value>expresspush</value>
+  <data name="factory_settings_title" xml:space="preserve">
+    <value>Factory settings</value>
+  </data>
+  <data name="factory_setting_otazka_text" xml:space="preserve">
+    <value>Realy set factory settings? All items they will be delete!</value>
+  </data>
+  <data name="factory_setting_otazka_title" xml:space="preserve">
+    <value>Factory settings</value>
+  </data>
+  <data name="filter" xml:space="preserve">
+    <value>Filter</value>
   </data>
   <data name="formatingtagoperationsucceessful" xml:space="preserve">
     <value>formatingtagoperationsucceessful</value>
   </data>
+  <data name="hladana_polozka" xml:space="preserve">
+    <value>Wanted item</value>
+  </data>
   <data name="hmotnost" xml:space="preserve">
-    <value>hmotnost ( g )</value>
+    <value>Weigth (g)</value>
+  </data>
+  <data name="hotovejedlo" xml:space="preserve">
+    <value>Ready meal</value>
+  </data>
+  <data name="hovadzie" xml:space="preserve">
+    <value>Beef</value>
+  </data>
+  <data name="hydina" xml:space="preserve">
+    <value>Poultry</value>
   </data>
   <data name="icon" xml:space="preserve">
-    <value>Ikona</value>
+    <value>Ikon</value>
+  </data>
+  <data name="ine" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="informacieweb" xml:space="preserve">
+    <value>Information in Web</value>
   </data>
   <data name="kategoria" xml:space="preserve">
-    <value>kategoria</value>
+    <value>Category</value>
+  </data>
+  <data name="kuracie" xml:space="preserve">
+    <value>Chicken</value>
   </data>
   <data name="licencnecislo" xml:space="preserve">
-    <value>licencnecislo</value>
+    <value>Licence number</value>
   </data>
   <data name="manual" xml:space="preserve">
-    <value>manual</value>
+    <value>Manual</value>
   </data>
   <data name="manualnyvyber" xml:space="preserve">
-    <value>manualnyvyber</value>
+    <value>Manual pull item</value>
+  </data>
+  <data name="masovevyrobky" xml:space="preserve">
+    <value>Meat product</value>
+  </data>
+  <data name="mliecnevyrobky" xml:space="preserve">
+    <value>Milk production</value>
   </data>
   <data name="musiexistovataspomjedenzaznam" xml:space="preserve">
-    <value>musiexistovataspomjedenzaznam</value>
+    <value>Must by one item</value>
+  </data>
+  <data name="najdena_polozka" xml:space="preserve">
+    <value>Found item</value>
   </data>
   <data name="naozajchcetevymazatzaznam" xml:space="preserve">
-    <value>naozajchcetevymazatzaznam</value>
+    <value>Realy delete item?</value>
   </data>
   <data name="nazov" xml:space="preserve">
-    <value>nazov</value>
+    <value>Name</value>
+  </data>
+  <data name="neplatny_licencny_kluc" xml:space="preserve">
+    <value>License key is not valid</value>
+  </data>
+  <data name="nepuzivany_tag" xml:space="preserve">
+    <value>TAG is not used</value>
+  </data>
+  <data name="nespravny_ean" xml:space="preserve">
+    <value>EAN not equal</value>
+  </data>
+  <data name="nespravny_tag" xml:space="preserve">
+    <value>TAG not equal</value>
   </data>
   <data name="nfcisdissabled" xml:space="preserve">
-    <value>nfcisdissabled</value>
+    <value>NFC is disable</value>
   </data>
   <data name="nfcisnotavailable" xml:space="preserve">
-    <value>nfcisnotavailable</value>
+    <value>NFC is not available</value>
   </data>
   <data name="nie" xml:space="preserve">
-    <value>nie</value>
+    <value>No</value>
   </data>
   <data name="niejemoznevymazatzaznam" xml:space="preserve">
-    <value>niejemoznevymazatzaznam</value>
+    <value>No possible delete item</value>
   </data>
   <data name="notagfound" xml:space="preserve">
-    <value>notagfound</value>
+    <value>No TAG found</value>
   </data>
   <data name="novamiestnost" xml:space="preserve">
-    <value>novamiestnost</value>
+    <value>New room</value>
   </data>
   <data name="novapolozka" xml:space="preserve">
-    <value>novapolozka</value>
+    <value>New item</value>
   </data>
   <data name="novapozicia" xml:space="preserve">
-    <value>novapozicia</value>
+    <value>New position</value>
   </data>
   <data name="novezariadenie" xml:space="preserve">
-    <value>Nové zariadenie</value>
+    <value>New device</value>
   </data>
   <data name="novytovar" xml:space="preserve">
-    <value>novytovar</value>
+    <value>New goods item</value>
   </data>
   <data name="ok" xml:space="preserve">
-    <value>ok</value>
+    <value>Ok</value>
+  </data>
+  <data name="ovocie" xml:space="preserve">
+    <value>Fruit</value>
   </data>
   <data name="oznam" xml:space="preserve">
-    <value>oznam</value>
+    <value>notification</value>
+  </data>
+  <data name="o_mraznicke" xml:space="preserve">
+    <value>About the freezer</value>
+  </data>
+  <data name="pecivo" xml:space="preserve">
+    <value>Pastries</value>
+  </data>
+  <data name="polotovar" xml:space="preserve">
+    <value>Semi-finished product</value>
+  </data>
+  <data name="polozka_bola_vymazana" xml:space="preserve">
+    <value>The item has been deleted</value>
+  </data>
+  <data name="polozka_ean_vymazana" xml:space="preserve">
+    <value>The EAN item has been deleted</value>
+  </data>
+  <data name="polozka_tag_vymazana" xml:space="preserve">
+    <value>The TAG item has been deleted</value>
   </data>
   <data name="popis" xml:space="preserve">
-    <value>Popis</value>
+    <value>Description</value>
   </data>
   <data name="popispoziciadetail" xml:space="preserve">
-    <value>popispoziciadetail</value>
+    <value>Description position detail</value>
   </data>
   <data name="popispozicialist" xml:space="preserve">
-    <value>popispozicialist</value>
+    <value>Position list</value>
   </data>
   <data name="popispoziciavytvorenie" xml:space="preserve">
-    <value>popispoziciavytvorenie</value>
+    <value>Description position creation</value>
   </data>
   <data name="popistovardetail" xml:space="preserve">
-    <value>popistovardetail</value>
+    <value>Description goods detail</value>
   </data>
   <data name="popistovarvytvorenie" xml:space="preserve">
-    <value>popistovarvytvorenie</value>
+    <value>Description goods creation</value>
   </data>
   <data name="popistovarzoznam" xml:space="preserve">
-    <value>popistovarzoznam</value>
+    <value>Description goods list</value>
   </data>
   <data name="popisvlozenie" xml:space="preserve">
     <value>popisvlozenie</value>
   </data>
   <data name="popisvyber" xml:space="preserve">
-    <value>popisvyber</value>
+    <value>Description search</value>
   </data>
   <data name="popiszariadeniedetail" xml:space="preserve">
-    <value>popiszariadeniedetail</value>
+    <value>List device record detail</value>
   </data>
   <data name="popiszariadenievytvorenie" xml:space="preserve">
-    <value>popiszariadenievytvorenie</value>
+    <value>Create device record</value>
   </data>
   <data name="popiszariadeniezoznam" xml:space="preserve">
-    <value>popiszariadeniezoznam</value>
+    <value>List device record</value>
   </data>
   <data name="poslednepouzite" xml:space="preserve">
-    <value>poslednepouzite</value>
+    <value>Last used</value>
   </data>
   <data name="pozicia" xml:space="preserve">
-    <value>Pozícia</value>
+    <value>Position</value>
   </data>
   <data name="poznamka" xml:space="preserve">
-    <value>poznamka</value>
+    <value>Note</value>
+  </data>
+  <data name="po_expiracii" xml:space="preserve">
+    <value>After expiration: </value>
   </data>
   <data name="prehlad" xml:space="preserve">
-    <value>Prehľad</value>
+    <value>View</value>
   </data>
   <data name="prehlad_main" xml:space="preserve">
-    <value>Prehľad s výberom</value>
+    <value>View with choice</value>
   </data>
   <data name="pridat" xml:space="preserve">
-    <value>pridat</value>
+    <value>Add</value>
   </data>
   <data name="recordcantbenull" xml:space="preserve">
-    <value>recordcantbenull</value>
+    <value>Record can not by null</value>
+  </data>
+  <data name="registracia_prebehla_uspesne" xml:space="preserve">
+    <value>Registration successfull</value>
+  </data>
+  <data name="restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="ryby" xml:space="preserve">
+    <value>Fish</value>
+  </data>
+  <data name="spravny_ean" xml:space="preserve">
+    <value>EAN equal</value>
+  </data>
+  <data name="spravny_tag" xml:space="preserve">
+    <value>TAG equal</value>
   </data>
   <data name="suflik" xml:space="preserve">
-    <value>suflik</value>
+    <value>Position</value>
   </data>
   <data name="tag" xml:space="preserve">
-    <value>tag</value>
+    <value>TAG</value>
   </data>
   <data name="tagid" xml:space="preserve">
-    <value>tagid</value>
+    <value>TAG ID</value>
   </data>
   <data name="taginfo" xml:space="preserve">
-    <value>taginfo</value>
+    <value>TAG Info</value>
   </data>
   <data name="tagsanepouziva" xml:space="preserve">
-    <value>tag sa nepouziva</value>
+    <value>TAG not used</value>
+  </data>
+  <data name="tag_sa_uz_pouziva" xml:space="preserve">
+    <value>Tag is used</value>
+  </data>
+  <data name="telefon_ku_ean" xml:space="preserve">
+    <value>Attach the phone to EAN</value>
+  </data>
+  <data name="telefon_ku_tag" xml:space="preserve">
+    <value>Attach the phone to TAG</value>
   </data>
   <data name="tovar" xml:space="preserve">
-    <value>tovar</value>
+    <value>the goods</value>
   </data>
   <data name="ulozit" xml:space="preserve">
-    <value>ulozit</value>
+    <value>Save</value>
   </data>
   <data name="unsupportedtag" xml:space="preserve">
-    <value>unsupportedtag</value>
+    <value>Unsuported TAG</value>
   </data>
   <data name="userhascancelnfcsession" xml:space="preserve">
-    <value>userhascancelnfcsession</value>
+    <value>User cancel sesion</value>
+  </data>
+  <data name="uvod" xml:space="preserve">
+    <value>Introduction</value>
   </data>
   <data name="uvodnastranka" xml:space="preserve">
-    <value>uvodnastranka</value>
+    <value>Home page</value>
+  </data>
+  <data name="uvodnastranka_text" xml:space="preserve">
+    <value>This application will allow you to check what, where and how long you have stored in the freezer.</value>
   </data>
   <data name="verzia" xml:space="preserve">
-    <value>1.1.1</value>
+    <value>Version </value>
+  </data>
+  <data name="verzia_cislo" xml:space="preserve">
+    <value>1.7</value>
+  </data>
+  <data name="vlozene" xml:space="preserve">
+    <value>Stored:</value>
   </data>
   <data name="vlozenie" xml:space="preserve">
-    <value>Vloženie</value>
+    <value>Push</value>
   </data>
   <data name="vlozeniemanualne" xml:space="preserve">
-    <value>vlozeniemanualne</value>
+    <value>Push manually</value>
   </data>
   <data name="vlozeniepomocouean" xml:space="preserve">
-    <value>vlozeniepomocouean</value>
+    <value>Push by EAN</value>
   </data>
-  <data name="vlozeniepomocoutagu" xml:space="preserve">
-    <value>vlozeniepomocoutagu</value>
+  <data name="vlozeniepomocoutag" xml:space="preserve">
+    <value>Push by TAG</value>
+  </data>
+  <data name="vlozenie_prebehlo_uspesne" xml:space="preserve">
+    <value>The insertion was successful</value>
   </data>
   <data name="vyber" xml:space="preserve">
-    <value>Výber</value>
+    <value>Pull</value>
   </data>
   <data name="vyberpomocouean" xml:space="preserve">
-    <value>vyberpomocouean</value>
+    <value>Pull by EAN</value>
   </data>
-  <data name="vyberpomocoutagu" xml:space="preserve">
-    <value>vyberpomocoutagu</value>
+  <data name="vyberpomocoutag" xml:space="preserve">
+    <value>Pull by TAG</value>
+  </data>
+  <data name="vyberte_tovar_vsetko" xml:space="preserve">
+    <value>Select goods - all</value>
+  </data>
+  <data name="vyberte_zariadenia_vsetky" xml:space="preserve">
+    <value>Select device - all </value>
   </data>
   <data name="vyber_main" xml:space="preserve">
-    <value>Hľadanie s výberom</value>
+    <value>Pull</value>
   </data>
   <data name="vymazaniezaznamu" xml:space="preserve">
-    <value>vymazaniezaznamu</value>
+    <value>Delete record</value>
   </data>
   <data name="writingtagisnotsupportedonthisdevice" xml:space="preserve">
-    <value>writingtagisnotsupportedonthisdevice</value>
+    <value>Writing tag is not supported on this device</value>
   </data>
   <data name="writingtagoperationsuccessful" xml:space="preserve">
-    <value>writingtagoperationsuccessful</value>
+    <value>Writing tag operation successful</value>
   </data>
   <data name="zadajteexpiraciu" xml:space="preserve">
-    <value>zadajteexpiraciu</value>
+    <value>Enter  Date Of Expiration</value>
   </data>
   <data name="zadajtehmotnost" xml:space="preserve">
-    <value>zadajtehmotnost</value>
+    <value>Enter weight</value>
   </data>
   <data name="zadajtelicencnecislo" xml:space="preserve">
-    <value>zadajtelicencnecislo</value>
+    <value>Enter licence number</value>
   </data>
   <data name="zadajtenazov" xml:space="preserve">
-    <value>zadajtenazov</value>
+    <value>Enter name</value>
   </data>
   <data name="zadajtepopis" xml:space="preserve">
-    <value>Tento údaj je povinný</value>
+    <value>This information is mandatory</value>
   </data>
   <data name="zadajtepoznamku" xml:space="preserve">
-    <value>zadajtepoznamku</value>
+    <value>Enter note</value>
+  </data>
+  <data name="zadajte_opis_popisu" xml:space="preserve">
+    <value>Enter section of text mandatory</value>
+  </data>
+  <data name="zadajte_popis" xml:space="preserve">
+    <value>Enter a description</value>
+  </data>
+  <data name="zadajte_poznamku" xml:space="preserve">
+    <value>Enter a note</value>
   </data>
   <data name="zapisnatag" xml:space="preserve">
-    <value>zapisnatag</value>
+    <value>Writing to TAG</value>
   </data>
   <data name="zariadenie" xml:space="preserve">
-    <value>zariadenie</value>
+    <value>Device</value>
   </data>
-  <data name="zaznamexistuje" xml:space="preserve">
-    <value>zaznamexistuje</value>
+  <data name="zaznamneexistuje" xml:space="preserve">
+    <value>Device not exist</value>
+  </data>
+  <data name="zelenina" xml:space="preserve">
+    <value>vegetables</value>
   </data>
   <data name="zmazat" xml:space="preserve">
-    <value>zmazat</value>
+    <value>Delete</value>
+  </data>
+  <data name="zoznammiestnosti" xml:space="preserve">
+    <value>Rooms list</value>
   </data>
   <data name="zoznampoloziek" xml:space="preserve">
-    <value>Zoznam položiek</value>
+    <value>Item list</value>
   </data>
   <data name="zoznampozicii" xml:space="preserve">
-    <value>Zoznam pozícií</value>
+    <value>Positons list</value>
   </data>
   <data name="zoznamtovarov" xml:space="preserve">
-    <value>Zoznam kategórií</value>
+    <value>Category list</value>
   </data>
   <data name="zoznamzariadeni" xml:space="preserve">
-    <value>Zoznam zariadení</value>
+    <value>Device list</value>
   </data>
   <data name="zrusit" xml:space="preserve">
-    <value>zrusit</value>
+    <value>Cancel</value>
+  </data>
+  <data name="zverina" xml:space="preserve">
+    <value>Venison</value>
   </data>
 </root>

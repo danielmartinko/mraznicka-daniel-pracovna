@@ -15,7 +15,9 @@ using Plugin.NFC;
 
 namespace Mraznicka.Droid
 {
-    [Activity(Label = "Mraznicka", Icon = "@mipmap/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "Mraznicka", Icon = "@mipmap/icon", Theme = "@style/MainTheme", 
+        Exported =false,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize, ScreenOrientation = ScreenOrientation.Portrait )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private NfcAdapter _nfcAdapter;

@@ -11,6 +11,9 @@ using System.Text;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using ZXing;
+using Plugin.Toast;
+using Xamarin.CommunityToolkit.Extensions;
+using System.Threading.Tasks;
 
 namespace Mraznicka.ViewModels.Vlozenie
 {
@@ -96,7 +99,7 @@ namespace Mraznicka.ViewModels.Vlozenie
 			Shell.Current.GoToAsync("..");
 		}
 
-		private async void OnSave()
+		async void OnSave()
 		{
 			DataStore.AddItem(Item);
 			// This will pop the current page off the navigation stack
@@ -105,11 +108,34 @@ namespace Mraznicka.ViewModels.Vlozenie
 
 			MainThread.BeginInvokeOnMainThread(() =>
 			{
-				contentPage.DisplayAlert("Chytra Mraznicka", "Zápis prebehol úspešne", "Ok").ContinueWith(t =>
+				int i;
+				//CrossToastPopUp.Current.ShowToastSuccess(str);
+                DMToast dt = new DMToast();
+				
+                dt.ToastSuccess(Mraznicka.Resources.AppResources.vlozenie_prebehlo_uspesne);
+                switch (Item.Typ)
+                {
+					default:
+						Shell.Current.GoToAsync("..");
+						break;
+					case 1:
+						Shell.Current.GoToAsync("AllInOnePage");
+						break;
+					case 2:
+						Shell.Current.GoToAsync("AllInOnePage");
+						break;
+					case 3:
+						Shell.Current.GoToAsync("..");
+						break;
+				}
+				
+                /*
+				contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, "Zápis prebehol úspešne", "Ok").ContinueWith(t =>
 				{
 					Shell.Current.Navigation.PopToRootAsync();
 				});
-			});
+				*/
+            });
 			//await Shell.Current.Navigation.PopToRootAsync();
 		}
 
@@ -131,8 +157,6 @@ namespace Mraznicka.ViewModels.Vlozenie
 			Item.Typ = 2;
 			((App)Application.Current).AllInOneItem = Item;
 			await Shell.Current.GoToAsync("VlozenieAllInOnePageEan");
-
-
 		}
 
 		public void OnAppearing()

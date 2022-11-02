@@ -14,9 +14,9 @@ namespace Mraznicka.ValueConverters
             switch ((int)value)
             {
                 case 1:
-                    return "Tag";
+                    return "TAG";
                 case 2:
-                    return "Ean";
+                    return "EAN";
                 case 3:
                     return "Manual";
                 default:

@@ -9,12 +9,19 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Plugin.SimpleAudioPlayer;
+using Plugin.Toast;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace Mraznicka.ViewModels.Vyber
 {
 	[QueryProperty(nameof(ItemId), nameof(ItemId))]
 	public class CompareTagPageViewModel : BaseViewModel
 	{
+		Button bSubmit;
+		Label lNajdena;
+		Label lPopis;
+		Label lVlozene;
+		Label lDatum;
 
 		public IDataStore<Models.Polozka> DataStore => DependencyService.Get<IDataStore<Models.Polozka>>();
 		
@@ -101,20 +108,31 @@ namespace Mraznicka.ViewModels.Vyber
 			contentPage = page;
 			VyberCommand = new Command(OnVyber, ValidateVyber);
 
+			bSubmit = contentPage.FindByName<Button>("btnSubmit");
+			lNajdena = contentPage.FindByName<Label>("Najdena");
+			lPopis = contentPage.FindByName<Label>("Popis");
+			lVlozene = contentPage.FindByName<Label>("Vlozene");
+			lDatum = contentPage.FindByName<Label>("Datum");
+
+			bSubmit.IsEnabled = true;
+			lNajdena.IsVisible = false;
+			lPopis.IsVisible = false;
+			lVlozene.IsVisible = false;
+			lDatum.IsVisible = false;
 
 			if (CrossNFC.IsSupported)
 			{
 				if (!CrossNFC.Current.IsAvailable)
 				{
 					//await ShowAlert(Mraznicka.Resources.AppResources.nfcisnotavailable);
-					contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisnotavailable, "Zrusit");
+					contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisnotavailable, Mraznicka.Resources.AppResources.zrusit);
 				}
 
 
 				NfcIsEnabled = CrossNFC.Current.IsEnabled;
 				if (!NfcIsEnabled)
 				{
-					contentPage.DisplayAlert("Chytra Mraznicka", Mraznicka.Resources.AppResources.nfcisdissabled, "Zrusit");
+					contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, Mraznicka.Resources.AppResources.nfcisdissabled, Mraznicka.Resources.AppResources.zrusit);
 				}
 
 
@@ -146,10 +164,12 @@ namespace Mraznicka.ViewModels.Vyber
 				bool answer = await contentPage.DisplayAlert(Resources.AppResources.vymazaniezaznamu, Resources.AppResources.naozajchcetevymazatzaznam, Resources.AppResources.ano, Resources.AppResources.nie);
 				if (answer)
 				{
-					DataStore.DeleteItem(item.Id);
+                    //CrossToastPopUp.Current.ShowToastSuccess(Resources.AppResources.polozka_tag_vymazana, Plugin.Toast.Abstractions.ToastLength.Long);
+                    DataStore.DeleteItem(item.Id);
+                    DMToast dt = new DMToast();
+                    dt.ToastSuccess(Mraznicka.Resources.AppResources.polozka_tag_vymazana);
 
-
-					await Shell.Current.Navigation.PopToRootAsync();
+                    await Shell.Current.Navigation.PopToRootAsync();
 					//Shell.Current.GoToAsync("PreviewPage");
 				}
 			}
@@ -174,38 +194,58 @@ namespace Mraznicka.ViewModels.Vyber
 
 		public void Compare(string tagId)
 		{
-			Button b = contentPage.FindByName<Button>("btnSubmit");
-			Label lNajdena = contentPage.FindByName<Label>("Najdena");
-			Label lPopis = contentPage.FindByName<Label>("Popis");
 			ISimpleAudioPlayer _simpleAudioPlayer;
 			_simpleAudioPlayer = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
 			var duration = TimeSpan.FromSeconds(1);
 			System.IO.Stream beepStream = GetType().Assembly.GetManifestResourceStream("Mraznicka.beep-02.mp3");
+
+			_simpleAudioPlayer.Volume = 10000;
+			// b.BackgroundColor = Color.Blue;
 
 			TagItem = DataStore.GetItems().FirstOrDefault(o => o.TagID == tagId);
 			if(TagItem != null)
 			{
 				if (Item.TagID == TagItem.TagID)
 				{
+					bSubmit.IsEnabled = true;
+					lNajdena.IsVisible = true;
+					lPopis.IsVisible = true;
+					lVlozene.IsVisible = true;
+					lDatum.IsVisible = true;
 					Vibration.Vibrate(duration);
-					b.BackgroundColor = Color.Orange;
-					b.IsEnabled = true;
 					lNajdena.TextColor = Color.Blue;
 					lPopis.TextColor = Color.Blue;
 					beepStream = GetType().Assembly.GetManifestResourceStream("Mraznicka.Pubg - ok.mp3");
-				 }
-				else
+                    DMToast dt = new DMToast();
+                    dt.ToastMessage(Mraznicka.Resources.AppResources.spravny_tag);
+
+                }
+                else
 				{
-					b.IsEnabled = false;
+					bSubmit.IsEnabled = true;
+					lNajdena.IsVisible = true;
+					lPopis.IsVisible = true;
+					lVlozene.IsVisible = true;
+					lDatum.IsVisible = true;
 					lNajdena.TextColor = Color.Black;
 					lPopis.TextColor = Color.Black;
 					beepStream = GetType().Assembly.GetManifestResourceStream("Mraznicka.No No.mp3");
-				}
-			}
+                    DMToast dt = new DMToast();
+                    dt.ToastError(Mraznicka.Resources.AppResources.nespravny_tag);
+                }
+            }
             else
             {
-
-            }
+				beepStream = GetType().Assembly.GetManifestResourceStream("Mraznicka.No No.mp3");
+                //CrossToastPopUp.Current.ShowToastError(Mraznicka.Resources.AppResources.tagsanepouziva, Plugin.Toast.Abstractions.ToastLength.Long);
+                DMToast dt = new DMToast();
+                dt.ToastError(Mraznicka.Resources.AppResources.tagsanepouziva);
+                bSubmit.IsEnabled = false;
+				lNajdena.IsVisible = false;
+				lPopis.IsVisible = false;
+				lVlozene.IsVisible = false;
+				lDatum.IsVisible = false;
+			}
 
 			try
 			{
@@ -217,7 +257,9 @@ namespace Mraznicka.ViewModels.Vyber
 			{
 				// Feature not supported on device
 			}
-			VyberCommand.ChangeCanExecute();
+			
+			//VyberCommand.ChangeCanExecute();
+			
 		}
 
 		public void SubscribeEvents()
@@ -257,7 +299,7 @@ namespace Mraznicka.ViewModels.Vyber
 		async void Current_OnNfcStatusChanged(bool isEnabled)
 		{
 			NfcIsEnabled = isEnabled;
-			await contentPage.DisplayAlert("Chytra Mraznicka", $"NFC has been {(isEnabled ? "enabled" : "disabled")}", "Zrusit");
+			await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, $"NFC has been {(isEnabled ? "enabled" : "disabled")}", Mraznicka.Resources.AppResources.zrusit);
 		}
 
 
@@ -277,13 +319,13 @@ namespace Mraznicka.ViewModels.Vyber
 			}
 			catch (Exception ex)
 			{
-				//problem s tagom napr (tagInfo.Records[0] nieje vyplnene)
+				await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, ex.Message, Mraznicka.Resources.AppResources.zrusit);
 			}
 
 		}
 
 		async void Current_OnMessagePublished(ITagInfo tagInfo)
-		{
+		{			
 		}
 
 		async void Current_OnTagDiscovered(ITagInfo tagInfo, bool format)
@@ -297,7 +339,7 @@ namespace Mraznicka.ViewModels.Vyber
 			}
 			catch (Exception ex)
 			{
-				//problem s tagom napr (tagInfo.Records[0] nieje vyplnene)
+				await contentPage.DisplayAlert(Mraznicka.Resources.AppResources.chytra_mraznicka, ex.Message, Mraznicka.Resources.AppResources.zrusit);
 			}
 		}
 	}

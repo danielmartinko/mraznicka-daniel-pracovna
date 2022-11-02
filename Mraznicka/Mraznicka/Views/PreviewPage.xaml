@@ -9,7 +9,7 @@
              mc:Ignorable="d"
              x:Class="Mraznicka.Views.PreviewPage"
              xmlns:i18n="clr-namespace:Mraznicka.Helpers" 
-			 Title="{i18n:Translate prehlad}">
+			 Title="{i18n:Translate prehlad}" >
 
 	<ContentPage.Resources>
 		<converters:ZariadenieConverter x:Key="zariadenieConverter" />
@@ -17,91 +17,73 @@
 		<converters:PoziciaConverter x:Key="poziciaConverter" />
 		<converters:TovarConverter x:Key="tovarConverter" />
 		<converters:DateConverter x:Key="dateConverter" />
-		<converters:ExpiraciaConverter x:Key="expiraciaConverter" />
+        <converters:DayConverter x:Key="dayConverter" />
+        <converters:ExpiraciaConverter x:Key="expiraciaConverter" />
         <converters:InsertConverter x:Key="insertConverter" />
         <converters:TovarToImageConverter x:Key="tovarToImageConverter" />
 
-        
-
     </ContentPage.Resources>
 	<RelativeLayout>
-		<!--<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="page_background.png" Aspect="AspectFill"/>
-
-		<RelativeLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
-			<Label Style="{StaticResource Note}" Text="{i18n:Translate popispreview}"></Label>
-		</RelativeLayout>-->
-
-		<!--<Label Padding="0,20,0,0">Pre filter vyberte polozku</Label>-->
 		<StackLayout Margin="10,0,0,0">
-			<Label TextColor="Black" Text="Filter" FontSize="18" FontAttributes="Bold"></Label>
-            <Picker x:Name="pckTovar" Title="Tovar" TextColor="Gray" FontSize="18" ItemsSource="{Binding Tovary}" ItemDisplayBinding="{Binding Nazov}" WidthRequest="400" SelectedIndexChanged="Handle_SelectedTovarIndexChanged"></Picker>
-            <Picker x:Name="pckZariadenie"  Title="Zariadenie" TextColor="Gray" FontSize="18" ItemsSource="{Binding Zariadenia}" ItemDisplayBinding="{Binding Nazov}" WidthRequest="400" SelectedIndexChanged="Handle_SelectedZariadenieIndexChanged"></Picker>
-            <Entry Placeholder="Zadajte popis" TextColor="Gray" FontSize="18" PlaceholderColor="Gray" Text="{Binding Filter}" WidthRequest="400"></Entry>
+            <Label TextColor="Black" Text="{i18n:Translate filter}" FontSize="18" FontAttributes="Bold"></Label>
+            <Picker x:Name="pckTovar" Title="{i18n:Translate tovar}" TextColor="Gray" FontSize="18" ItemsSource="{Binding Tovary}" ItemDisplayBinding="{Binding Nazov}" WidthRequest="400" SelectedIndexChanged="Handle_SelectedTovarIndexChanged"></Picker>
+            <Picker x:Name="pckZariadenie"  Title="{i18n:Translate zariadenie}" TextColor="Gray" FontSize="18" ItemsSource="{Binding Zariadenia}" ItemDisplayBinding="{Binding Nazov}" WidthRequest="400" SelectedIndexChanged="Handle_SelectedZariadenieIndexChanged"></Picker>
+            <Entry Placeholder="{i18n:Translate zadajte_opis_popisu}" TextColor="Gray" FontSize="18" PlaceholderColor="Gray" Text="{Binding Filter}" WidthRequest="400"></Entry>
 		</StackLayout>
 
-		<!--<CollectionView ItemsSource="{Binding Tovar}" ItemsLayout="VerticalGrid, 2" IsVisible="true">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        -->
-		<!--<Button CornerRadius="0" WidthRequest="20" HeightRequest="40" Text="{Binding Nazov}" Command="{Binding FilterCommand}" CommandParameter="{Binding .}"></Button>-->
-		<!--<Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill"  HeightRequest="60" WidthRequest="60" />-->
-		<!--
-
-                        <Button CornerRadius="0" WidthRequest="10" HeightRequest="40" Command="{Binding Source={RelativeSource AncestorType={x:Type local:PreviewPageViewModel}}, Path=ItemFilter}" CommandParameter="{Binding .}" Text="{Binding Nazov}"></Button>
-
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>-->
-		<RefreshView Margin="0,200,0,60"  x:DataType="local:PreviewPageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+		<RefreshView Margin="0,220,0,0"  x:DataType="local:PreviewPageViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
 			<CollectionView  x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">
 				<CollectionView.ItemTemplate>
 					<DataTemplate>
-                        <StackLayout Padding="20,10,0,0" x:DataType="model:Polozka" Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
+                        <StackLayout Padding="20,0,0,0" x:DataType="model:Polozka" Orientation="Horizontal"  Style="{DynamicResource StackLayoutList}" BackgroundColor="#fff">
 
-                            <StackLayout Orientation="Vertical" WidthRequest="80">
-                                <ImageButton Source="{Binding Tovar, Converter={StaticResource tovarToImageConverter}}" Margin="0,0,20,0" VerticalOptions="CenterAndExpand" Command="{Binding Source={RelativeSource AncestorType={x:Type local:PreviewPageViewModel}}, Path=ItemPull}" CommandParameter="{Binding .}"></ImageButton>
+                            <StackLayout Orientation="Vertical" WidthRequest="90" >
+                                <Label Text="{i18n:Translate vyber}" TextColor="Black" Margin="5,5,0,0" FontSize="12"/>
+                                <ImageButton Source="{Binding Tovar, Converter={StaticResource tovarToImageConverter}}" 
+                                    Margin="0,-25,20,0" 
+                                    VerticalOptions="CenterAndExpand" 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:PreviewPageViewModel}}, Path=ItemPull}" 
+                                    CommandParameter="{Binding .}"></ImageButton>
                             </StackLayout>
 
                             <StackLayout>
-								<Label Text="{Binding Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" />
+								<Label Text="{Binding Popis}" LineBreakMode="NoWrap" Style="{DynamicResource Header}" FontSize="20"/>
 								<StackLayout Orientation="Horizontal">
-									<!--<Frame Style="{DynamicResource FrameOrange}">
-										<Label Text="{Binding Miestnost, Converter={StaticResource miestnostConverter}}" Style="{DynamicResource FrameLabelWhite}" />
-									</Frame>-->
-									<!--<Frame Style="{DynamicResource FrameOrange}">
-										<Label Text="{Binding Zariadenie, Converter={StaticResource zariadenieConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
-									</Frame>-->
-									<!--<Frame Style="{DynamicResource FrameBlue}">
-                                        <Label Text="{Binding Pozicia, Converter={StaticResource poziciaConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
-                                    </Frame>-->
-									<!--<Frame CornerRadius="10" OutlineColor="{StaticResource Primary}" BackgroundColor="{StaticResource Primary}" Padding="10,2,10,2">
-										<Label Text="{Binding Tovar, Converter={StaticResource tovarConverter}}" LineBreakMode="NoWrap" TextColor="White" FontSize="13" />
-									</Frame>-->
-									<Frame Style="{DynamicResource FrameOrange}" BackgroundColor="{Binding ., Converter={StaticResource expiraciaConverter}}" BorderColor="{Binding ., Converter={StaticResource expiraciaConverter}}">
-										<Label Text="{Binding Expiracia, StringFormat='Expirácia: {0}', Converter={StaticResource dateConverter}}"  Style="{DynamicResource FrameLabelWhite}" />
+									<Frame Style="{DynamicResource FrameOrange}" 
+                                        BackgroundColor="{Binding ., Converter={StaticResource expiraciaConverter}}" 
+                                        BorderColor="{Binding ., Converter={StaticResource expiraciaConverter}}">
+										<Label Text="{Binding Expiracia, StringFormat='{0}', 
+                                            Converter={StaticResource dayConverter}}"  
+                                            Style="{DynamicResource FrameLabelWhite}"
+                                            FontSize="15"/>
 									</Frame>
-									<!--<Label Text="{Binding Expiracia, StringFormat='Expiracia: {0}', Converter={StaticResource dateConverter}}" Style="{DynamicResource FrameLabel}" />-->
-									<!--<Label Text="{Binding Pozicia, Converter={StaticResource poziciaConverter}}" Style="{DynamicResource FrameLabel}" />-->
 								</StackLayout>
-                                <!--<StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Typ, StringFormat='Vlozene: {0}', Converter={StaticResource insertConverter}}" Style="{DynamicResource FrameLabel}" />
-                                </StackLayout>-->
-								<Label Text="{Binding DatumVytvorenia, StringFormat='Vložené: {0}',  Converter={StaticResource dateConverter}}" Style="{DynamicResource FrameLabel}" TextColor="Black"/>
-							</StackLayout>
+								<StackLayout Orientation="Horizontal">
+                                    <Label Text="{i18n:Translate vlozene}" 
+                                       Style="{DynamicResource KeyLabel}" 
+                                       TextColor="Black" FontSize="15"
+                                           FontAttributes="None" Padding="0,-4,0,0"/>
+
+                                    <Label Text="{Binding DatumVytvorenia, StringFormat='{0}' , Converter={StaticResource dateConverter}}" 
+                                       Style="{DynamicResource KeyLabel}" 
+                                       TextColor="Black" FontSize="15" FontAttributes="None" Padding="0,-4,0,0"/>
+                                    
+									<Label TextColor="Blue" 
+                                       FontSize="15"
+                                       Text="{Binding Typ, StringFormat='{0}', Converter={StaticResource insertConverter}}" 
+                                       Style="{DynamicResource KeyLabel}" Padding="0,-4,0,0"/>
+								</StackLayout>
+
+                        </StackLayout>
 
 							<StackLayout.GestureRecognizers>
-								<TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:PreviewPageViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"></TapGestureRecognizer>
-							</StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:PreviewPageViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
 						</StackLayout>
 					</DataTemplate>
 				</CollectionView.ItemTemplate>
 			</CollectionView>
 		</RefreshView>
 
-		<RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}" HorizontalOptions="Center">
-			<Image Source="logo.png" Opacity="0.8" HeightRequest="45" Aspect="AspectFill" ></Image>
-		</RelativeLayout>
-
-
-	</RelativeLayout>
+    </RelativeLayout>
 </ContentPage>
