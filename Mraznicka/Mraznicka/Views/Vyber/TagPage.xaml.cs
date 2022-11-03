@@ -18,7 +18,6 @@ namespace Mraznicka.Views.Vyber
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
     [QueryProperty(nameof(TAG_ID), "TAG_ID")]
-    [QueryProperty(nameof(NAME), "Name")]
     public partial class TagPage : ContentPage, INotifyPropertyChanged
 	{
 		string tag_id;
