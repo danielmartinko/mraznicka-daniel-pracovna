@@ -47,6 +47,7 @@ namespace Mraznicka
 
 			Routing.RegisterRoute("PolozkaListPage", typeof(Views.Polozka.ListPage));
 			Routing.RegisterRoute("PolozkaDetailPage", typeof(Views.Polozka.DetailPage));
+			Routing.RegisterRoute("PolozkaDetailPage2", typeof(Views.Polozka.DetailPage2));
 			Routing.RegisterRoute("PolozkaCreatePage", typeof(Views.Polozka.CreatePage));
 
 

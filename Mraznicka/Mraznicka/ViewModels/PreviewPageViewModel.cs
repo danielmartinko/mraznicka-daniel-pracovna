@@ -145,7 +145,7 @@ namespace Mraznicka.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"PolozkaDetailPage?{nameof(ViewModels.Polozka.DetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"PolozkaDetailPage2?{nameof(ViewModels.Polozka.DetailViewModel.ItemId)}={item.Id}");
         }
 
         async void OnItemPull(Models.Polozka item)

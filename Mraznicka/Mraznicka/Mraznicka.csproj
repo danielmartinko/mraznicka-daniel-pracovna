@@ -68,6 +68,9 @@
     <Compile Update="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Polozka\DetailPage2.xaml.cs">
+      <DependentUpon>DetailPage2.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\PushPage.xaml.cs">
       <DependentUpon>PushPage.xaml</DependentUpon>
     </Compile>
